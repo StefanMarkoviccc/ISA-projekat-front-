@@ -12,14 +12,19 @@ import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import { HouseViewComponent } from './house-view/house-view.component';
 import { CreateHouseComponent } from './create-house/create-house.component';
-
+import { CreateAppointmentComponent } from './create-appointment/create-appointment.component';
+import {MatDatepicker} from "@angular/material/datepicker"
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatCheckboxModule} from "@angular/material/checkbox"
 @NgModule({
   declarations: [
     AppComponent,
     CreateHouseComponent,
     HomeComponent,
     RegistrationComponent,
-    HouseViewComponent
+    HouseViewComponent,
+    CreateAppointmentComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,10 @@ import { CreateHouseComponent } from './create-house/create-house.component';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
