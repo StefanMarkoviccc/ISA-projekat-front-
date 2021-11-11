@@ -13,6 +13,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { HouseViewComponent } from './house-view/house-view.component';
 import { CreateHouseComponent } from './create-house/create-house.component';
 import { BoatViewComponent } from './boat-view/boat-view.component';
+import { InstructorViewComponent } from './instructor-view/instructor-view.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BoatViewComponent } from './boat-view/boat-view.component';
     HomeComponent,
     RegistrationComponent,
     HouseViewComponent,
-    BoatViewComponent
+    BoatViewComponent,
+    InstructorViewComponent
   ],
   imports: [
     BrowserModule,
