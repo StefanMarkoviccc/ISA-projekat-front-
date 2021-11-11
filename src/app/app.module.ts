@@ -11,10 +11,12 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import { HouseViewComponent } from './house-view/house-view.component';
+import { CreateHouseComponent } from './create-house/create-house.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    CreateHouseComponent,
     HomeComponent,
     RegistrationComponent,
     HouseViewComponent
