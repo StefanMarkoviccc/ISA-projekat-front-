@@ -1,0 +1,14 @@
+<div class="page">
+    <mat-card>
+        <mat-card-content>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <li><a routerLink="/registration" routerLinkActive="active">Registration</a></li>
+                <li><a routerLink="/seeHouses" routerLinkActive="active">See houses</a></li>
+                <li><a routerLink="/seeBoats" routerLinkActive="active">See boats</a></li>
+                <li><a routerLink="/seeInstructors" routerLinkActive="active">See insturctors</a></li>
+                <h3>Search</h3>
+                <input matInput placeholder="Search" formControlName="search" required>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
