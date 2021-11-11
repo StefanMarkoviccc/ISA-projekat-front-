@@ -12,6 +12,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import { HouseViewComponent } from './house-view/house-view.component';
 import { CreateHouseComponent } from './create-house/create-house.component';
+import { BoatViewComponent } from './boat-view/boat-view.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CreateHouseComponent } from './create-house/create-house.component';
     CreateHouseComponent,
     HomeComponent,
     RegistrationComponent,
-    HouseViewComponent
+    HouseViewComponent,
+    BoatViewComponent
   ],
   imports: [
     BrowserModule,
