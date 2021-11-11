@@ -1,0 +1,50 @@
+<div class="page">
+    <mat-card>
+        <mat-card-content>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <h2>Registration</h2>
+                <mat-form-field>
+                    <input matInput placeholder="Email" formControlName="email" required>
+                </mat-form-field> 
+                <mat-form-field>
+                    <input matInput placeholder="Password" formControlName="password" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="PasswordConfirmation" formControlName="password" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="First name" formControlName="firstName" required>
+                </mat-form-field> 
+                <mat-form-field>
+                    <input matInput placeholder="Last name" formControlName="lastName" required>
+                </mat-form-field> 
+                <mat-form-field>
+                    <input matInput placeholder="Address" formControlName="address" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="City" formControlName="city" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Country" formControlName="country" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Phone number" formControlName="phoneNumber" required>
+                </mat-form-field> 
+                <mat-form-field>
+                    <mat-label>Select an options</mat-label>
+                    <mat-select [(value)]="selectedType">
+                        <mat-option value="HOUSE_OWNER">House owner</mat-option>
+                        <mat-option value="BOAT_OWNER">Boat owner</mat-option>
+                        <mat-option value="INSTRUCTOR">Instructor</mat-option>
+                        <mat-option value="FISHING_INSTRUCTOR">Fishing instructor</mat-option>
+                        <mat-option value="CLIENT">Client</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Description" formControlName="description" required>
+                </mat-form-field> 
+                <button mat-raised-button color="primary">Register</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
