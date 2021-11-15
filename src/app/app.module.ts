@@ -17,6 +17,9 @@ import {MatDatepicker} from "@angular/material/datepicker"
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatCheckboxModule} from "@angular/material/checkbox"
+import { BoatViewComponent } from './boat-view/boat-view.component';
+import { InstructorViewComponent } from './instructor-view/instructor-view.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +27,9 @@ import {MatCheckboxModule} from "@angular/material/checkbox"
     HomeComponent,
     RegistrationComponent,
     HouseViewComponent,
-    CreateAppointmentComponent
+    CreateAppointmentComponent,
+    BoatViewComponent,
+    InstructorViewComponent
   ],
   imports: [
     BrowserModule,
