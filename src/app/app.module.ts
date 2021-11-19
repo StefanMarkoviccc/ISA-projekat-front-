@@ -20,6 +20,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox"
 import { BoatViewComponent } from './boat-view/boat-view.component';
 import { InstructorViewComponent } from './instructor-view/instructor-view.component';
 import { CreateBoatComponent } from './create-boat/create-boat.component';
+import { CreateBoatAppointmentComponent } from './create-boat-appointment/create-boat-appointment.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CreateBoatComponent } from './create-boat/create-boat.component';
     CreateAppointmentComponent,
     BoatViewComponent,
     InstructorViewComponent,
-    CreateBoatComponent
+    CreateBoatComponent,
+    CreateBoatAppointmentComponent
   ],
   imports: [
     BrowserModule,

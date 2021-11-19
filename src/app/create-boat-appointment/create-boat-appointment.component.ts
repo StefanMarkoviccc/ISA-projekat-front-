@@ -2,21 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-create-appointment',
-  templateUrl: './create-appointment.component.html',
-  styleUrls: ['./create-appointment.component.scss']
+  selector: 'app-create-boat-appointment',
+  templateUrl: './create-boat-appointment.component.html',
+  styleUrls: ['./create-boat-appointment.component.scss']
 })
-export class CreateAppointmentComponent implements OnInit {
+export class CreateBoatAppointmentComponent implements OnInit {
 
   form: FormGroup;
-  selectedRoom: any;
-  selectedHouse: any;
+  selectedBoat: any;
   isAction: any;
 
   constructor(private formBuilder: FormBuilder) {
-    this.form = this.formBuilder.group({
-      house: ['', Validators.required],
-      room: ['', Validators.required],
+    this.form=this.formBuilder.group({
+      boat: ['',Validators.required],
       date: ['', Validators.required],
       duration: ['', Validators.required],
       maxPersons: ['', Validators.required],

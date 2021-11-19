@@ -8,6 +8,7 @@ import { CreateAppointmentComponent } from './create-appointment/create-appointm
 import { BoatViewComponent } from './boat-view/boat-view.component';
 import { InstructorViewComponent } from './instructor-view/instructor-view.component';
 import { CreateBoatComponent } from './create-boat/create-boat.component';
+import { CreateBoatAppointmentComponent } from './create-boat-appointment/create-boat-appointment.component';
 
 const routes: Routes = [
   {path: 'registration', component: RegistrationComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'create-appointment', component: CreateAppointmentComponent },
   {path: 'boatView', component: BoatViewComponent},
   {path: 'instructorView', component: InstructorViewComponent},
-  {path: 'create-boat', component: CreateBoatComponent}
+  {path: 'create-boat', component: CreateBoatComponent},
+  {path: 'create-boat-appointment', component: CreateBoatAppointmentComponent}
 ];
 
 @NgModule({
