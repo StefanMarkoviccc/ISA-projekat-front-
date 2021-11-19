@@ -21,6 +21,7 @@ import { BoatViewComponent } from './boat-view/boat-view.component';
 import { InstructorViewComponent } from './instructor-view/instructor-view.component';
 import { CreateBoatComponent } from './create-boat/create-boat.component';
 import { CreateBoatAppointmentComponent } from './create-boat-appointment/create-boat-appointment.component';
+import { HouseOwnerHomePageComponent } from './house-owner-home-page/house-owner-home-page.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CreateBoatAppointmentComponent } from './create-boat-appointment/create
     BoatViewComponent,
     InstructorViewComponent,
     CreateBoatComponent,
-    CreateBoatAppointmentComponent
+    CreateBoatAppointmentComponent,
+    HouseOwnerHomePageComponent
   ],
   imports: [
     BrowserModule,
