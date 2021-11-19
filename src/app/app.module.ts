@@ -19,6 +19,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatCheckboxModule} from "@angular/material/checkbox"
 import { BoatViewComponent } from './boat-view/boat-view.component';
 import { InstructorViewComponent } from './instructor-view/instructor-view.component';
+import { CreateBoatComponent } from './create-boat/create-boat.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { InstructorViewComponent } from './instructor-view/instructor-view.compo
     HouseViewComponent,
     CreateAppointmentComponent,
     BoatViewComponent,
-    InstructorViewComponent
+    InstructorViewComponent,
+    CreateBoatComponent
   ],
   imports: [
     BrowserModule,
