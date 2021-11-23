@@ -19,6 +19,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatCheckboxModule} from "@angular/material/checkbox"
 import { BoatViewComponent } from './boat-view/boat-view.component';
 import { InstructorViewComponent } from './instructor-view/instructor-view.component';
+import { CreateBoatComponent } from './create-boat/create-boat.component';
+import { CreateBoatAppointmentComponent } from './create-boat-appointment/create-boat-appointment.component';
+import { HouseOwnerHomePageComponent } from './house-owner-home-page/house-owner-home-page.component';
+import { BoatOwnerHomePageComponent } from './boat-owner-home-page/boat-owner-home-page.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { InstructorViewComponent } from './instructor-view/instructor-view.compo
     HouseViewComponent,
     CreateAppointmentComponent,
     BoatViewComponent,
-    InstructorViewComponent
+    InstructorViewComponent,
+    CreateBoatComponent,
+    CreateBoatAppointmentComponent,
+    HouseOwnerHomePageComponent,
+    BoatOwnerHomePageComponent
   ],
   imports: [
     BrowserModule,
