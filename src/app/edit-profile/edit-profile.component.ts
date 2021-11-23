@@ -14,8 +14,24 @@ export class EditProfileComponent implements OnInit {
   form: FormGroup;
   
   constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router) {
-    this.form = this.formBuilder.group({});
-    this.api.editProfile({id:1}).subscribe((response: any) => {
+    this.form = this.formBuilder.group({
+      email: ['', Validators.email],
+      password: ['', Validators.required],
+      passwordConfirmation: ['', Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required ],
+      address: ['', Validators.required],
+      city: ['', Validators.required],
+      country: ['', Validators.required],
+      phoneNumber: ['', Validators.required],
+      userType: ['', Validators.required],
+      description: ['', Validators.required]
+    });
+
+    this.api.getUser({id:1}).subscribe((response: any) => {
+
+      console.log(response);
+
       this.form = this.formBuilder.group({
       email: [response.email, Validators.email],
       password: [response.password, Validators.required],
@@ -37,6 +53,8 @@ export class EditProfileComponent implements OnInit {
   }
 
   onSubmit() {
+
+
     this.api.editProfile({
       email: this.form.get('email')?.value,
       password: this.form.get('password')?.value,

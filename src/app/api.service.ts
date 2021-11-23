@@ -26,12 +26,14 @@ export class ApiService {
   createHouse(data: any){
     return this.http.post(this.url + '/api/houses', data);
   }
-
   editHouse(data: any){
     return this.http.put(this.url + '/api/houses' + data.id, data);
   }
   editProfile(data: any){
-    return this.http.put(this.url + '/api/users' + data.id, data);
+    return this.http.put(this.url + '/api/users/' + data.id, data);
+  }
+  getUser(data: any){
+    return this.http.get(this.url + '/api/users/' + data.id);
   }
 }
 
