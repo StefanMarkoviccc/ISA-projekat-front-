@@ -24,9 +24,6 @@ export class CreateHouseComponent implements OnInit {
       description: ['', Validators.required],
       rulesOfConduct: ['', Validators.required],
       numberOfRooms: ['', Validators.required],
-      room: ['', Validators.required],
-      appointement: ['', Validators.required],
-      priceList: ['', Validators.required]
     });
 
    }
@@ -44,9 +41,6 @@ export class CreateHouseComponent implements OnInit {
         description: this.form.get('description')?.value,
         rulesOfConduct: this.form.get('rulesOfConduct')?.value,
         numberOfRooms: this.form.get('numberOfRooms')?.value,
-        room: this.form.get('room')?.value,
-        appointement: this.form.get('appointement')?.value,
-        priceList: this.form.get('priceList')?.value,
       }).subscribe((response: any) => {
         this.router.navigate(['/']);
       })
