@@ -26,6 +26,7 @@ import { BoatOwnerHomePageComponent } from './boat-owner-home-page/boat-owner-ho
 import { HttpClientModule } from '@angular/common/http';
 import { ClientHomePageComponent } from './client-home-page/client-home-page.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { EditHouseComponent } from './edit-house/edit-house.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,9 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     HouseOwnerHomePageComponent,
     BoatOwnerHomePageComponent,
     ClientHomePageComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    EditHouseComponent
+
   ],
   imports: [
     BrowserModule,

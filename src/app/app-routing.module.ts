@@ -12,6 +12,7 @@ import { CreateBoatAppointmentComponent } from './create-boat-appointment/create
 import { HouseOwnerHomePageComponent } from './house-owner-home-page/house-owner-home-page.component';
 import { BoatOwnerHomePageComponent } from './boat-owner-home-page/boat-owner-home-page.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { EditHouseComponent } from './edit-house/edit-house.component';
 
 const routes: Routes = [
   {path: 'registration', component: RegistrationComponent},
@@ -25,7 +26,8 @@ const routes: Routes = [
   {path: 'create-boat-appointment', component: CreateBoatAppointmentComponent},
   {path: 'house-owner-home-page', component: HouseOwnerHomePageComponent},
   {path: 'boat-owner-home-page', component: BoatOwnerHomePageComponent},
-  {path: 'edit-profile', component: EditProfileComponent}
+  {path: 'edit-profile', component: EditProfileComponent},
+  {path: 'edit-house', component: EditHouseComponent}
 ];
 
 @NgModule({

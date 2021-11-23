@@ -24,7 +24,11 @@ export class ApiService {
     return this.http.post(this.url + '/api/users/client', data);
   }
   createHouse(data: any){
-    return this.http.post(this.url + '/api/houses' + data.id, data);
+    return this.http.post(this.url + '/api/houses', data);
+  }
+
+  editHouse(data: any){
+    return this.http.put(this.url + '/api/houses' + data.id, data);
   }
   editProfile(data: any){
     return this.http.put(this.url + '/api/users' + data.id, data);

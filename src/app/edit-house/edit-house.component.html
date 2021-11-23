@@ -2,7 +2,7 @@
     <mat-card>
         <mat-card-content>
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
-                <h2>Create house</h2>
+                <h2>Edit house</h2>
                 <mat-form-field>
                     <input matInput placeholder="Name" formControlName="name" required>
                 </mat-form-field> 
@@ -24,7 +24,7 @@
                 <mat-form-field>
                     <input matInput placeholder="Number of rooms" formControlName="numberOfRooms" required>
                 </mat-form-field>
-                <button mat-raised-button color="primary">Create</button>
+                <button mat-raised-button color="primary">Edit</button>
             </form>
         </mat-card-content>
     </mat-card>
