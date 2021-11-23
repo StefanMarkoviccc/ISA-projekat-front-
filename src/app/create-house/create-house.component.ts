@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-create-house',
@@ -13,7 +15,7 @@ export class CreateHouseComponent implements OnInit {
   selectedAppointment: any;
   selectedPriceList: any;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router) {
     this.form = this.formBuilder.group({
       name: ['', Validators.required],
       address: ['', Validators.required],
@@ -34,6 +36,20 @@ export class CreateHouseComponent implements OnInit {
 
   onSubmit() {
 
+    this.api.createHouse({
+        name: this.form.get('name')?.value,
+        address: this.form.get('address')?.value,
+        geographicalWidth: this.form.get('geographicalWidth')?.value,
+        geographicalLength: this.form.get('geographicalLength')?.value,
+        description: this.form.get('description')?.value,
+        rulesOfConduct: this.form.get('rulesOfConduct')?.value,
+        numberOfRooms: this.form.get('numberOfRooms')?.value,
+        room: this.form.get('room')?.value,
+        appointement: this.form.get('appointement')?.value,
+        priceList: this.form.get('priceList')?.value,
+      }).subscribe((response: any) => {
+        this.router.navigate(['/']);
+      })
   }
 
 }
