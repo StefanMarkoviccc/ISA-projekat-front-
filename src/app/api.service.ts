@@ -12,7 +12,16 @@ export class ApiService {
 
 
   houseOwnerRegistration(data: any) {
-    return this.http.post(this.url + '/api/users/register/...', data);
+    return this.http.post(this.url + '/api/users/register/house-owner', data);
+  }
+  boatOwnerRegistration(data: any) {
+    return this.http.post(this.url + '/api/users/register/boat-owner', data);
+  }
+  fishingInstructorRegistration(data: any) {
+    return this.http.post(this.url + '/api/users/register/fishing-instructor', data);
+  }
+  clientRegistration(data: any) {
+    return this.http.post(this.url + '/api/users/register/client', data);
   }
 
   createHouse(data: any){
