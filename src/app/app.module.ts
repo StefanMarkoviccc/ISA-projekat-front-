@@ -23,6 +23,7 @@ import { CreateBoatComponent } from './create-boat/create-boat.component';
 import { CreateBoatAppointmentComponent } from './create-boat-appointment/create-boat-appointment.component';
 import { HouseOwnerHomePageComponent } from './house-owner-home-page/house-owner-home-page.component';
 import { BoatOwnerHomePageComponent } from './boat-owner-home-page/boat-owner-home-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { BoatOwnerHomePageComponent } from './boat-owner-home-page/boat-owner-ho
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

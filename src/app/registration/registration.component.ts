@@ -34,7 +34,7 @@ export class RegistrationComponent implements OnInit {
 
   onSubmit() {
 
-    if(this.form.get('userType')?.value === 'HOUSE_OWNER') {
+    if(this.selectedType === 'HOUSE_OWNER') {
       this.api.houseOwnerRegistration({
         email: this.form.get('email')?.value,
         password: this.form.get('password')?.value,
@@ -50,7 +50,7 @@ export class RegistrationComponent implements OnInit {
       }).subscribe((response: any) => {
         this.router.navigate(['/']);
       })
-    }else if(this.form.get('userType')?.value === 'BOAT_OWNER'){
+    }else if(this.selectedType === 'BOAT_OWNER'){
       this.api.boatOwnerRegistration({
         email: this.form.get('email')?.value,
         password: this.form.get('password')?.value,
@@ -66,7 +66,7 @@ export class RegistrationComponent implements OnInit {
         }).subscribe((response: any) => {
         this.router.navigate(['/']);
       })
-    }else if(this.form.get('userType')?.value === 'FISHING_INSTURCTOR'){
+    }else if(this.selectedType === 'FISHING_INSTURCTOR'){
       this.api.fishingInstructorRegistration({
         email: this.form.get('email')?.value,
         password: this.form.get('password')?.value,
