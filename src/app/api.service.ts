@@ -26,5 +26,9 @@ export class ApiService {
   createHouse(data: any){
     return this.http.post(this.url + '/api/houses', data);
   }
+
+  editHouse(data: any){
+    return this.http.put(this.url + '/api/houses' + data.id, data);
+  }
 }
 
