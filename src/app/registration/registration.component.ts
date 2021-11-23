@@ -34,6 +34,8 @@ export class RegistrationComponent implements OnInit {
 
   onSubmit() {
 
+    console.log('Test', this.selectedType);
+
     if(this.selectedType === 'HOUSE_OWNER') {
       this.api.houseOwnerRegistration({
         email: this.form.get('email')?.value,
@@ -66,7 +68,7 @@ export class RegistrationComponent implements OnInit {
         }).subscribe((response: any) => {
         this.router.navigate(['/']);
       })
-    }else if(this.selectedType === 'FISHING_INSTURCTOR'){
+    }else if(this.selectedType === 'FISHING_INSTRUCTOR'){
       this.api.fishingInstructorRegistration({
         email: this.form.get('email')?.value,
         password: this.form.get('password')?.value,

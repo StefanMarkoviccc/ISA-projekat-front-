@@ -24,6 +24,7 @@ import { CreateBoatAppointmentComponent } from './create-boat-appointment/create
 import { HouseOwnerHomePageComponent } from './house-owner-home-page/house-owner-home-page.component';
 import { BoatOwnerHomePageComponent } from './boat-owner-home-page/boat-owner-home-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ClientHomePageComponent } from './client-home-page/client-home-page.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
     CreateBoatComponent,
     CreateBoatAppointmentComponent,
     HouseOwnerHomePageComponent,
-    BoatOwnerHomePageComponent
+    BoatOwnerHomePageComponent,
+    ClientHomePageComponent
   ],
   imports: [
     BrowserModule,
