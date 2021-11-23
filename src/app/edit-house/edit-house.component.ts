@@ -13,18 +13,30 @@ export class EditHouseComponent implements OnInit {
   form: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router) {
-  this.form = this.formBuilder.group({});
-  this.api.editHouse({id:1}).subscribe((response: any) => {
-    this.form = this.formBuilder.group({
-      name: [response.name, Validators.required],
-      address: [response.address, Validators.required],
-      geographicalWidth: [response.geographicalWidth, Validators.required],
-      geographicalLength: [response.geographicalLength, Validators.required],
-      description: [response.description, Validators.required],
-      rulesOfConduct: [response.rulesOfConduct, Validators.required],
-      numberOfRooms: [response.numberOfRooms, Validators.required],
+  this.form = this.formBuilder.group({
+      name: ['', Validators.required],
+      address: ['', Validators.required],
+      geographicalWidth: ['', Validators.required],
+      geographicalLength: ['', Validators.required],
+      description: ['', Validators.required],
+      rulesOfConduct: ['', Validators.required],
+      numberOfRooms: ['', Validators.required],
     });
-   });
+
+    this.api.getHouse({id:1}).subscribe((response: any) => {
+
+      console.log(response);
+  
+      this.form = this.formBuilder.group({
+        name: [response.name, Validators.required],
+        address: [response.address, Validators.required],
+        geographicalWidth: [response.geographicalWidth, Validators.required],
+        geographicalLength: [response.geographicalLength, Validators.required],
+        description: [response.description, Validators.required],
+        rulesOfConduct: [response.rulesOfConduct, Validators.required],
+        numberOfRooms: [response.numberOfRooms, Validators.required],
+      });
+    });
   }
 
   ngOnInit(): void {
