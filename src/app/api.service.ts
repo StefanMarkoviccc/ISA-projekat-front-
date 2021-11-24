@@ -38,5 +38,8 @@ export class ApiService {
   getHouse(data: any){
     return this.http.get(this.url + '/api/houses/' + data.id, data);
   }
+  createBoat(data: any){
+    return this.http.post(this.url + '/api/boats', data);
+  }
 }
 
