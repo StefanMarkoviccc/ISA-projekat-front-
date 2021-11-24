@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-create-appointment',
@@ -13,7 +15,7 @@ export class CreateAppointmentComponent implements OnInit {
   selectedHouse: any;
   isAction: any;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router) {
     this.form = this.formBuilder.group({
       house: ['', Validators.required],
       room: ['', Validators.required],
@@ -30,6 +32,17 @@ export class CreateAppointmentComponent implements OnInit {
 
   onSubmit() {
 
+    this.api.createAppointment({
+      house: this.form.get('name')?.value,
+      room: this.form.get('room')?.value,
+      date: this.form.get('date')?.value,
+      duration: this.form.get('duration')?.value,
+      maxPersons: this.form.get('maxPersons')?.value,
+      price: this.form.get('price')?.value,
+      isAction: this.form.get('isAction')?.value,
+    }).subscribe((response: any) => {
+      this.router.navigate(['/']);
+    })
   }
 
 }

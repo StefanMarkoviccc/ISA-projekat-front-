@@ -41,5 +41,8 @@ export class ApiService {
   createBoat(data: any){
     return this.http.post(this.url + '/api/boats', data);
   }
+  createAppointment(data: any){
+    return this.http.post(this.url + '/api/appointments', data);
+  }
 }
 
