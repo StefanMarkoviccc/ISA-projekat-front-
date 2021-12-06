@@ -28,6 +28,7 @@ import { ClientHomePageComponent } from './client-home-page/client-home-page.com
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { EditHouseComponent } from './edit-house/edit-house.component';
 import { EditBoatComponent } from './edit-boat/edit-boat.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { EditBoatComponent } from './edit-boat/edit-boat.component';
     ClientHomePageComponent,
     EditProfileComponent,
     EditHouseComponent,
-    EditBoatComponent
+    EditBoatComponent,
+    LoginComponent
 
   ],
   imports: [

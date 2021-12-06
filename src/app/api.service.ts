@@ -8,8 +8,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
   
-  url = "http://localhost:8080";
-
+  url = "http://localhost:8081";
 
   houseOwnerRegistration(data: any) {
     return this.http.post(this.url + '/api/users/house-owner', data);
