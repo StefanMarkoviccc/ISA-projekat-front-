@@ -15,8 +15,7 @@ export class LoginComponent implements OnInit {
   {
     this.form = this.formBuilder.group({
       email: ['', Validators.email],
-      password: ['', Validators.required],
-      passwordConfirmation: ['', Validators.required]
+      password: ['', Validators.required]
     });
   }
 
@@ -25,7 +24,13 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
 
-
+      this.api.login({
+        email: this.form.get('email')?.value,
+        password: this.form.get('password')?.value,
+      }).subscribe((response: any) => {
+        console.log(response);
+        localStorage.setItem('token', response.token)
+      });
     
     }
   }
