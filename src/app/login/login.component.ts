@@ -37,8 +37,14 @@ export class LoginComponent implements OnInit {
           if(response.userType == "HOUSE_OWNER") {
               this.router.navigate(['/house-owner-home-page']);
           }
-          else if(response.userType == "") {
-            this.router.navigate(['']);
+          else if(response.userType == "BOAT_OWNER") {
+            this.router.navigate(['/boat-owner-home-page']);
+          }
+          else if(response.userType == "FISHING_INSTRUCTOR") {
+            this.router.navigate(['/']);
+          }
+          else if(response.userType == "CLIENT"){
+            this.router.navigate(['/client-home-page']);
           }
         });
       });
