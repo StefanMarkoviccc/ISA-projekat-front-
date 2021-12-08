@@ -45,10 +45,10 @@ export class RegistrationComponent implements OnInit {
         lastName: this.form.get('lastName')?.value,
         address: this.form.get('address')?.value,
         city: this.form.get('city')?.value,
-        conutry: this.form.get('country')?.value,
+        country: this.form.get('country')?.value,
         phoneNumber: this.form.get('phoneNumber')?.value,
         userType: this.form.get('userType')?.value,
-        description: this.form.get('description')?.value,
+        description: this.form.get('description')?.value
       }).subscribe((response: any) => {
         this.router.navigate(['/']);
       })
@@ -61,7 +61,7 @@ export class RegistrationComponent implements OnInit {
         lastName: this.form.get('lastName')?.value,
         address: this.form.get('address')?.value,
         city: this.form.get('city')?.value,
-        conutry: this.form.get('country')?.value,
+        country: this.form.get('country')?.value,
         phoneNumber: this.form.get('phoneNumber')?.value,
         userType: this.form.get('userType')?.value,
         description: this.form.get('description')?.value,
@@ -77,7 +77,7 @@ export class RegistrationComponent implements OnInit {
         lastName: this.form.get('lastName')?.value,
         address: this.form.get('address')?.value,
         city: this.form.get('city')?.value,
-        conutry: this.form.get('country')?.value,
+        country: this.form.get('country')?.value,
         phoneNumber: this.form.get('phoneNumber')?.value,
         userType: this.form.get('userType')?.value,
         description: this.form.get('description')?.value,
@@ -93,7 +93,7 @@ export class RegistrationComponent implements OnInit {
         lastName: this.form.get('lastName')?.value,
         address: this.form.get('address')?.value,
         city: this.form.get('city')?.value,
-        conutry: this.form.get('country')?.value,
+        country: this.form.get('country')?.value,
         phoneNumber: this.form.get('phoneNumber')?.value,
         userType: this.form.get('userType')?.value,
         description: this.form.get('description')?.value,
