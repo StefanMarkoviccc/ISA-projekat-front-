@@ -14,6 +14,7 @@ export class CreateAppointmentComponent implements OnInit {
   selectedRoom: any;
   selectedHouse: any;
   isAction: any;
+  rooms: any;
 
   constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router) {
     this.form = this.formBuilder.group({
@@ -28,6 +29,15 @@ export class CreateAppointmentComponent implements OnInit {
    }
 
   ngOnInit(): void {
+
+    this.rooms = [];
+
+    this.api.getAllRooms({
+
+    }).subscribe((response: any) => {
+      this.rooms = response;
+    })
+
   }
 
   onSubmit() {
