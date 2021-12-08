@@ -48,7 +48,7 @@ export class RegistrationComponent implements OnInit {
         country: this.form.get('country')?.value,
         phoneNumber: this.form.get('phoneNumber')?.value,
         userType: this.form.get('userType')?.value,
-        description: this.form.get('description')?.value,
+        description: this.form.get('description')?.value
       }).subscribe((response: any) => {
         this.router.navigate(['/']);
       })
