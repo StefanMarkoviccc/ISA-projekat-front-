@@ -33,6 +33,13 @@ export class LoginComponent implements OnInit {
 
         this.api.getCurrentUser().subscribe((response: any) => {
           localStorage.setItem('user', JSON.stringify(response));
+
+          if(response.userType == "") {
+              this.router.navigate(['']);
+          }
+          else if(response.userType == "") {
+            this.router.navigate(['']);
+          }
         });
       });
     
