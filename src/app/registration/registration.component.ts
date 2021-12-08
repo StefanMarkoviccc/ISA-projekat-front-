@@ -50,7 +50,7 @@ export class RegistrationComponent implements OnInit {
         userType: this.form.get('userType')?.value,
         description: this.form.get('description')?.value
       }).subscribe((response: any) => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       })
     }else if(this.selectedType === 'BOAT_OWNER'){
       this.api.boatOwnerRegistration({
@@ -66,7 +66,7 @@ export class RegistrationComponent implements OnInit {
         userType: this.form.get('userType')?.value,
         description: this.form.get('description')?.value,
         }).subscribe((response: any) => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       })
     }else if(this.selectedType === 'FISHING_INSTRUCTOR'){
       this.api.fishingInstructorRegistration({
@@ -82,7 +82,7 @@ export class RegistrationComponent implements OnInit {
         userType: this.form.get('userType')?.value,
         description: this.form.get('description')?.value,
         }).subscribe((response: any) => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       })
     }else{
       this.api.clientRegistration({
@@ -98,7 +98,7 @@ export class RegistrationComponent implements OnInit {
         userType: this.form.get('userType')?.value,
         description: this.form.get('description')?.value,
         }).subscribe((response: any) => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       })
     }
   }
