@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'app-client-home-page',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientHomePageComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup
 
+  constructor(private formBuilder: FormBuilder) 
+  {
+    this.form = this.formBuilder.group({
+      search: ['']
+    });
+  }
   ngOnInit(): void {
   }
-
+  onSubmit() {}
 }
