@@ -1,8 +1,13 @@
 .page {
     min-height: calc(100vh - 100px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: lightblue;
+    height: 100%;
 }
 
 .mat-form-field {
@@ -12,8 +17,4 @@
 mat-card {
     width: 50%;
     margin: 0 auto;
-}
-
-.title {
-    font-size: 20;
 }
