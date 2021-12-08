@@ -30,6 +30,10 @@ export class LoginComponent implements OnInit {
       }).subscribe((response: any) => {
         console.log(response);
         localStorage.setItem('token', response.token)
+
+        this.api.getCurrentUser().subscribe((response: any) => {
+          localStorage.setItem('user', JSON.stringify(response));
+        });
       });
     
     }

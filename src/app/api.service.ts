@@ -14,6 +14,10 @@ export class ApiService {
     return this.http.post(this.url + '/api/users/login', data);
   }
 
+  getCurrentUser() {
+    return this.http.get(this.url + '/api/users/current', this.generateHeader());
+  }
+
   houseOwnerRegistration(data: any) {
     return this.http.post(this.url + '/api/users/house-owner', data, this.generateHeader());
   }
