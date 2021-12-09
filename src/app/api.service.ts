@@ -75,5 +75,8 @@ export class ApiService {
       headers: headers
     };
   }
+  getAllRooms(data: any){
+    return this.http.post(this.url + '/api/rooms', data);
+  }
 }
 
