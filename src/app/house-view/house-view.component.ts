@@ -52,10 +52,9 @@ export class HouseViewComponent implements OnInit {
     }
 }
 
-handleReaderLoaded(e: any) {
+  handleReaderLoaded(e: any) {
   this.base64textString = ('data:image/png;base64,' + btoa(e.target.result));
   console.log(this.base64textString)
-}
+  }
 
->>>>>>> a3b22392c7026a6b823728b37621e944b196042a
 }
