@@ -68,7 +68,7 @@ export class EditProfileComponent implements OnInit {
       userType: this.form.get('userType')?.value,
       description: this.form.get('description')?.value,
     }).subscribe((response: any) => {
-      this.router.navigate(['/']);
+      this.router.navigate(['/client-home-page']);
     })
   }
 }

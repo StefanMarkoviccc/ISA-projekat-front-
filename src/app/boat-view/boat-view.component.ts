@@ -24,7 +24,10 @@ export class BoatViewComponent implements OnInit {
   }
 
   getBoats() {
-    this.api.getBoats({search: ''}).subscribe((response: any) => {
+
+    let search = this.form.get('search')?.value ? this.form.get('search')?.value : ''
+
+    this.api.getBoats({search: search}).subscribe((response: any) => {
       this.boats = response;
     })
   }
