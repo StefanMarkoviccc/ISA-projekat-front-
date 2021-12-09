@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ApiService } from '../api.service';
 
 
 @Component({
@@ -10,8 +11,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class HouseViewComponent implements OnInit {
 
   form: FormGroup
+  houses: any;
 
-  constructor(private formBuilder: FormBuilder) 
+  constructor(private formBuilder: FormBuilder, private api: ApiService) 
   {
     this.form = this.formBuilder.group({
       search: ['']
@@ -19,7 +21,16 @@ export class HouseViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getHouses();
   }
 
-  onSubmit() {}
+  getHouses() {
+    this.api.getHouses({search: ''}).subscribe((response: any) => {
+      this.houses = response;
+    })
+  }
+
+  onSubmit() {
+    this.getHouses();
+  }
 }

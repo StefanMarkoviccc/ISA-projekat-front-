@@ -46,7 +46,7 @@ export class CreateBoatComponent implements OnInit {
       rulesOfConduct: this.form.get('rulesOfConduct')?.value,
       fishingEquipment: this.form.get('fishingEquipment')?.value,
     }).subscribe((response: any) => {
-      this.router.navigate(['/']);
+      this.router.navigate(['/home']);
     })
   }
 

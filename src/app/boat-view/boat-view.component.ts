@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-boat-view',
@@ -9,8 +10,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class BoatViewComponent implements OnInit {
 
   form: FormGroup
+  boats: any
 
-  constructor(private formBuilder: FormBuilder) 
+  constructor(private formBuilder: FormBuilder, private api : ApiService) 
   {
     this.form = this.formBuilder.group({
       search: ['']
@@ -18,7 +20,16 @@ export class BoatViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getBoats();
   }
 
-  onSubmit() {}
+  getBoats() {
+    this.api.getBoats({search: ''}).subscribe((response: any) => {
+      this.boats = response;
+    })
+  }
+
+  onSubmit() {
+    this.getBoats();
+  }
 }

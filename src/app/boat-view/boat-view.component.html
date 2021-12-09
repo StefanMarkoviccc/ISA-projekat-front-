@@ -2,18 +2,17 @@
     <mat-card>
         <mat-card-content>
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
-                <h1 class="title">See boat info</h1>
-                <p>Boat name:</p>
-                <h2>broddddd</h2>
-                <p>Address:</p>
-                <h3>Dunav 31</h3>
-                <p>Description</p>
-                <h4>Opis broda</h4>
-                <p>Average grade</p>
-                <h5>3.00</h5>
-                <p>Free appointments</p>
-                <h6>Nista slobodno</h6>
+                <input type="text" placeholder="Search...">
             </form>
+            <div class="boats">
+                <div class="boat" *ngFor="let boat of boats">
+                    <h1 class="title">{{boat.name}}</h1>
+                    <p>Boat name: {{boat.name}}</p>
+                    <p>Address: {{boat.address}}</p>
+                    <p>Description: {{boat.description}}</p>
+                    <p>Average grade: {{boat.description}}</p>
+                </div>
+            </div>
         </mat-card-content>
     </mat-card>
 </div>

@@ -2,16 +2,17 @@
     <mat-card>
         <mat-card-content>
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
-                <h1 class="title">See house info</h1>
-                <p>House name:</p>
-                <h2>TestHouseName</h2>
-                <p>Address:</p>
-                <h3>Danila Kisa 35</h3>
-                <p>Description</p>
-                <h4>Opis gajbe</h4>
-                <p>Average grade</p>
-                <h5>5.00</h5>
+                <input type="text" placeholder="Search...">
             </form>
+            <div class="houses">
+                <div class="house" *ngFor="let house of houses">
+                    <h1 class="title">{{house.name}}</h1>
+                    <p>House name: {{house.name}}</p>
+                    <p>Address: {{house.address}}</p>
+                    <p>Description: {{house.description}}</p>
+                    <p>Average grade: {{house.average}}</p>
+                </div>
+            </div>
         </mat-card-content>
     </mat-card>
 </div>
