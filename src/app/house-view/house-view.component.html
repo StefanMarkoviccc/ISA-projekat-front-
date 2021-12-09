@@ -12,6 +12,13 @@
                 <p>Average grade</p>
                 <h5>5.00</h5>
             </form>
+
+            <div class="form-group">
+                <label for="file">Choose File</label>
+                <input type="file"
+                       id="file"
+                       (change)="handleFileInput($event)">
+            </div>
         </mat-card-content>
     </mat-card>
 </div>
