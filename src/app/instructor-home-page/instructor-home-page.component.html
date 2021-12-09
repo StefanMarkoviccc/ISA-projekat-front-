@@ -1,0 +1,21 @@
+<div class="page">
+    <mat-card>
+        <mat-card-content>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <h3>Search</h3>
+                <input matInput placeholder="Search" formControlName="search" required>
+                <li><a routerLink="/edit-instructor-services" routerLinkActive="active">Edit profile</a></li>
+                <li><a routerLink="/availability-period" routerLinkActive="active">Availability period</a></li>
+                <li><a routerLink="/reservation-list" routerLinkActive="active">Reservation list</a></li>
+                <li><a routerLink="/reservation-list-client-profile" routerLinkActive="active">Reservation list-client profile</a></li>
+                <li><a routerLink="/quick-booking" routerLinkActive="active">Quick booking</a></li>
+                <li><a routerLink="/report-completed-reservations" routerLinkActive="active">Report of completed reservations</a></li>
+                <li><a routerLink="/new-reservations" routerLinkActive="active">Make new reservations</a></li>
+                <li><a routerLink="/occupancy-calendar" routerLinkActive="active">Occupancy calendar</a></li>
+                <li><a routerLink="/updates-personal-informations" routerLinkActive="active">Updates my informations</a></li>
+                <li><a routerLink="/request-delete-account" routerLinkActive="active">Request to delete my account</a></li>
+                <li><a routerLink="/change-password" routerLinkActive="active">Change password</a></li>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
