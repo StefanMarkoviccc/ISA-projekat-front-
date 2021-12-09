@@ -2,7 +2,8 @@
     <mat-card>
         <mat-card-content>
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
-                <input type="text" placeholder="Search...">
+                <input type="text" placeholder="Search..." formControlName="search">
+                <button mat-raised-button color="primary">Search</button>
             </form>
             <div class="houses">
                 <div class="house" *ngFor="let house of houses">
@@ -15,12 +16,11 @@
                         <label for="file">Choose File</label>
                         <input type="file"
                                id="file"
-                               (change)="handleFileInput($event)">
+                               (change)="handleFileInput($event, house.id)">
                     </div>
                 </div>
                 
             </div>
-           
         </mat-card-content>
     </mat-card>
 </div>

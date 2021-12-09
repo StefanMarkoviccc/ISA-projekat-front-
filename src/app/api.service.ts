@@ -63,6 +63,13 @@ export class ApiService {
   getBoats(data: any){
     return this.http.get(this.url + '/api/boats/', this.generateHeader());
   }
+  getHouseImages(data: any){
+    return this.http.get(this.url + '/api/houseImages/' + data.id, this.generateHeader());
+  }
+
+  createImage(data: any) {
+    return this.http.post(this.url + '/api/houseImages', data, this.generateHeader())
+  }
 
   generateHeader() : any {
 
