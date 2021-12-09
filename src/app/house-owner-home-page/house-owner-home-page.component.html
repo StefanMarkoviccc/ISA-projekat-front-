@@ -4,9 +4,12 @@
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <h3>Search</h3>
                 <input matInput placeholder="Search" formControlName="search" required>
+                <li><a routerLink="/edit-profile" routerLinkActive="active">Edit profile</a></li>
+                <li><a routerLink="/change-password" routerLinkActive="active">Change password</a></li>
                 <li><a routerLink="/create-house" routerLinkActive="active">Create house</a></li>
                 <li><a routerLink="/houseView" routerLinkActive="active">See house</a></li>
                 <li><a routerLink="/create-appointment" routerLinkActive="active">Create an appointment</a></li>
+                <li><a routerLink="request-delete-account" routerLinkActive="active">Request delete account</a></li>
             </form>
         </mat-card-content>
     </mat-card>

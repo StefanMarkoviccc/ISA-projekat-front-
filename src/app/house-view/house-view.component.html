@@ -8,18 +8,8 @@
             <div class="houses">
                 <div class="house" *ngFor="let house of houses">
                     <h1 class="title">{{house.name}}</h1>
-                    <p>House name: {{house.name}}</p>
-                    <p>Address: {{house.address}}</p>
-                    <p>Description: {{house.description}}</p>
-                    <p>Average grade: {{house.average}}</p>
-                    <div class="form-group">
-                        <label for="file">Choose File</label>
-                        <input type="file"
-                               id="file"
-                               (change)="handleFileInput($event, house.id)">
-                    </div>
-                </div>
-                
+                    <li><a routerLink="/house-profile" routerLinkActive="active">See house</a></li>
+                </div>            
             </div>
         </mat-card-content>
     </mat-card>

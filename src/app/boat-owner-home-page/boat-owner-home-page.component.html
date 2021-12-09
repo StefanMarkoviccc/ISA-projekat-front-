@@ -4,6 +4,8 @@
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <h3>Search</h3>
                 <input matInput placeholder="Search" formControlName="search" required>
+                <li><a routerLink="/edit-profile" routerLinkActive="active">Edit profile</a></li>
+                <li><a routerLink="/change-password" routerLinkActive="active">Change password</a></li>
                 <li><a routerLink="/create-boat" routerLinkActive="active">Create boat</a></li>
                 <li><a routerLink="/boatView" routerLinkActive="active">See boat</a></li>
                 <li><a routerLink="/create-boat-appointment" routerLinkActive="active">Create an appointment</a></li>

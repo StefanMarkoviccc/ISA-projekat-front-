@@ -33,6 +33,9 @@ export class ApiService {
   createHouse(data: any){
     return this.http.post(this.url + '/api/houses', data, this.generateHeader());
   }
+  deleteHouse(data: any){
+    return this.http.delete(this.url + '/api/houses/' + data.id, data);
+  }
   editHouse(data: any){
     return this.http.put(this.url + '/api/houses/' + data.id, data, this.generateHeader());
   }
