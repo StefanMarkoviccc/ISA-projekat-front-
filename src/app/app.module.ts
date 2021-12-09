@@ -29,6 +29,18 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { EditHouseComponent } from './edit-house/edit-house.component';
 import { EditBoatComponent } from './edit-boat/edit-boat.component';
 import { LoginComponent } from './login/login.component';
+import { InstructorHomePageComponent } from './instructor-home-page/instructor-home-page.component';
+import { EditInstructorServicesComponent } from './edit-instructor-services/edit-instructor-services.component';
+import { AvailabilityPeriodComponent } from './availability-period/availability-period.component';
+import { ReservationListComponent } from './reservation-list/reservation-list.component';
+import { ReservationListClientProfileComponent } from './reservation-list-client-profile/reservation-list-client-profile.component';
+import { QuickBookingComponent } from './quick-booking/quick-booking.component';
+import { ReportCompletedReservationsComponent } from './report-completed-reservations/report-completed-reservations.component';
+import { NewReservationsComponent } from './new-reservations/new-reservations.component';
+import { OccupancyCalendarComponent } from './occupancy-calendar/occupancy-calendar.component';
+import { UpdatesPersonalInformationsComponent } from './updates-personal-informations/updates-personal-informations.component';
+import { RequestDeleteAccountComponent } from './request-delete-account/request-delete-account.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +60,19 @@ import { LoginComponent } from './login/login.component';
     EditProfileComponent,
     EditHouseComponent,
     EditBoatComponent,
-    LoginComponent
+    LoginComponent,
+    InstructorHomePageComponent,
+    EditInstructorServicesComponent,
+    AvailabilityPeriodComponent,
+    ReservationListComponent,
+    ReservationListClientProfileComponent,
+    QuickBookingComponent,
+    ReportCompletedReservationsComponent,
+    NewReservationsComponent,
+    OccupancyCalendarComponent,
+    UpdatesPersonalInformationsComponent,
+    RequestDeleteAccountComponent,
+    ChangePasswordComponent
 
   ],
   imports: [

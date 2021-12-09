@@ -15,7 +15,17 @@ import { BoatOwnerHomePageComponent } from './boat-owner-home-page/boat-owner-ho
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { EditHouseComponent } from './edit-house/edit-house.component';
 import { EditBoatComponent } from './edit-boat/edit-boat.component';
+import { EditInstructorServicesComponent } from './edit-instructor-services/edit-instructor-services.component';
 import { ClientHomePageComponent } from './client-home-page/client-home-page.component';
+import { InstructorHomePageComponent } from './instructor-home-page/instructor-home-page.component';
+import { NewReservationsComponent } from './new-reservations/new-reservations.component';
+import { OccupancyCalendarComponent } from './occupancy-calendar/occupancy-calendar.component';
+import { QuickBookingComponent } from './quick-booking/quick-booking.component';
+import { ReportCompletedReservationsComponent } from './report-completed-reservations/report-completed-reservations.component';
+import { RequestDeleteAccountComponent } from './request-delete-account/request-delete-account.component';
+import { ReservationListComponent } from './reservation-list/reservation-list.component';
+import { ReservationListClientProfileComponent } from './reservation-list-client-profile/reservation-list-client-profile.component';
+import { UpdatesPersonalInformationsComponent } from './updates-personal-informations/updates-personal-informations.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -33,7 +43,17 @@ const routes: Routes = [
   {path: 'edit-profile', component: EditProfileComponent},
   {path: 'edit-house', component: EditHouseComponent},
   {path: 'edit-boat', component: EditBoatComponent},
-  {path: 'client-home-page', component: ClientHomePageComponent}
+  {path: 'client-home-page', component: ClientHomePageComponent},
+  {path: 'instructor-home-page', component: InstructorHomePageComponent},
+  {path: 'new-reservations', component: NewReservationsComponent},
+  {path: 'quick-booking', component: QuickBookingComponent},
+  {path: 'occupancy-calendar', component: OccupancyCalendarComponent},
+  {path: 'report-completed-reservations', component: ReportCompletedReservationsComponent},
+  {path: 'request-delete-account', component: RequestDeleteAccountComponent},
+  {path: 'reservation-list', component: ReservationListComponent},
+  {path: 'reservation-list-client-profile', component: ReservationListClientProfileComponent},
+  {path: 'updates-personal-informations', component: UpdatesPersonalInformationsComponent},
+  {path: 'edit-instructor-services', component: EditInstructorServicesComponent},
 ];
 
 @NgModule({
