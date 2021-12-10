@@ -42,7 +42,7 @@ export class CreateHouseComponent implements OnInit {
         rulesOfConduct: this.form.get('rulesOfConduct')?.value,
         numberOfRooms: this.form.get('numberOfRooms')?.value,
       }).subscribe((response: any) => {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/houseView']);
       })
   }
 

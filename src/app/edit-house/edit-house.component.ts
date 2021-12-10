@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -11,8 +11,10 @@ import { ApiService } from '../api.service';
 export class EditHouseComponent implements OnInit {
 
   form: FormGroup;
+  house: any;
+  id: any;
 
-  constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router, private activatedRoute: ActivatedRoute) {
   this.form = this.formBuilder.group({
       name: ['', Validators.required],
       address: ['', Validators.required],
@@ -23,7 +25,12 @@ export class EditHouseComponent implements OnInit {
       numberOfRooms: ['', Validators.required],
     });
 
-    this.api.getHouse({id:1}).subscribe((response: any) => {
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.id = params['id'];
+    });
+
+
+    this.api.getHouse({id:this.id}).subscribe((response: any) => {
 
       console.log(response);
   
@@ -45,6 +52,7 @@ export class EditHouseComponent implements OnInit {
   onSubmit() {
 
     this.api.editHouse({
+        id: this.id,
         name: this.form.get('name')?.value,
         address: this.form.get('address')?.value,
         geographicalWidth: this.form.get('geographicalWidth')?.value,
@@ -53,7 +61,7 @@ export class EditHouseComponent implements OnInit {
         rulesOfConduct: this.form.get('rulesOfConduct')?.value,
         numberOfRooms: this.form.get('numberOfRooms')?.value,
       }).subscribe((response: any) => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/houseView']);
       })
   }
   

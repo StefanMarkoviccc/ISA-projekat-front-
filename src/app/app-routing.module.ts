@@ -30,6 +30,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { HouseProfileComponent } from './house-profile/house-profile.component';
 import { AvailabilityPeriodComponent } from './availability-period/availability-period.component';
 import { CreateAvailabilityPeriodHouseComponent } from './create-availability-period-house/create-availability-period-house.component';
+import { HouseBookingHistoryComponent } from './house-booking-history/house-booking-history.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -61,6 +62,7 @@ const routes: Routes = [
   {path: 'change-password', component: ChangePasswordComponent},
   {path: 'house-profile', component: HouseProfileComponent},
   {path: 'create-avaliability-period-house', component: CreateAvailabilityPeriodHouseComponent},
+  {path: 'house-booking-history', component: HouseBookingHistoryComponent},
   
 ];
 

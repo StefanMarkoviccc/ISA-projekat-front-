@@ -44,6 +44,10 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { AdventureReservationComponent } from './adventure-reservation/adventure-reservation.component';
 import { HouseProfileComponent } from './house-profile/house-profile.component';
 import { CreateAvailabilityPeriodHouseComponent } from './create-availability-period-house/create-availability-period-house.component';
+import { HouseBookingHistoryComponent } from './house-booking-history/house-booking-history.component';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -78,7 +82,8 @@ import { CreateAvailabilityPeriodHouseComponent } from './create-availability-pe
     ChangePasswordComponent,
     AdventureReservationComponent,
     HouseProfileComponent,
-    CreateAvailabilityPeriodHouseComponent
+    CreateAvailabilityPeriodHouseComponent,
+    HouseBookingHistoryComponent
 
   ],
   imports: [
@@ -94,7 +99,12 @@ import { CreateAvailabilityPeriodHouseComponent } from './create-availability-pe
     MatDatepickerModule,
     MatNativeDateModule,
     MatCheckboxModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

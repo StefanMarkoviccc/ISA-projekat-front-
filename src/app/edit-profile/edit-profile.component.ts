@@ -12,6 +12,7 @@ export class EditProfileComponent implements OnInit {
   
   selectedType: any;
   form: FormGroup;
+  user:any;
   
   constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router) {
     this.form = this.formBuilder.group({
@@ -26,7 +27,17 @@ export class EditProfileComponent implements OnInit {
       description: ['', Validators.required]
     });
 
-    this.api.getUser({id:1}).subscribe((response: any) => {
+    let jsonUser = localStorage.getItem('user');
+
+    if(jsonUser) {
+      this.user = JSON.parse(jsonUser);
+    }
+
+    if(!this.user) {
+      return;
+    }
+
+    this.api.getUser({id:this.user.id}).subscribe((response: any) => {
 
       console.log(response);
 
@@ -49,9 +60,8 @@ export class EditProfileComponent implements OnInit {
   }
 
   onSubmit() {
-
-
     this.api.editProfile({
+      id: this.user.id,
       email: this.form.get('email')?.value,
       firstName: this.form.get('firstName')?.value,
       lastName: this.form.get('lastName')?.value,

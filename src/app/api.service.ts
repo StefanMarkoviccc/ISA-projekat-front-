@@ -34,13 +34,13 @@ export class ApiService {
     return this.http.post(this.url + '/api/houses', data, this.generateHeader());
   }
   deleteHouse(data: any){
-    return this.http.delete(this.url + '/api/houses/' + data.id, data);
+    return this.http.delete(this.url + '/api/houses/' + data.id, this.generateHeader());
   }
   editHouse(data: any){
     return this.http.put(this.url + '/api/houses/' + data.id, data, this.generateHeader());
   }
   editProfile(data: any){
-    return this.http.put(this.url + '/api/users/' + 1, data, this.generateHeader());
+    return this.http.put(this.url + '/api/users/' + data.id, data, this.generateHeader());
   }
   getUser(data: any){
     return this.http.get(this.url + '/api/users/' + data.id, this.generateHeader());
