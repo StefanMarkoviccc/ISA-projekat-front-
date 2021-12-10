@@ -42,6 +42,9 @@ export class ApiService {
   editProfile(data: any){
     return this.http.put(this.url + '/api/users/' + 1, data, this.generateHeader());
   }
+  changePassword(data: any){
+    return this.http.put(this.url + '/api/users/change-password', data, this.generateHeader());
+  }
   getUser(data: any){
     return this.http.get(this.url + '/api/users/' + data.id, this.generateHeader());
   }

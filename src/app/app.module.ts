@@ -44,6 +44,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { AdventureReservationComponent } from './adventure-reservation/adventure-reservation.component';
 import { HouseProfileComponent } from './house-profile/house-profile.component';
 import { CreateAvailabilityPeriodHouseComponent } from './create-availability-period-house/create-availability-period-house.component';
+import { InstructorProfilComponent } from './instructor-profil/instructor-profil.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { CreateAvailabilityPeriodHouseComponent } from './create-availability-pe
     ChangePasswordComponent,
     AdventureReservationComponent,
     HouseProfileComponent,
-    CreateAvailabilityPeriodHouseComponent
+    CreateAvailabilityPeriodHouseComponent,
+    InstructorProfilComponent
 
   ],
   imports: [

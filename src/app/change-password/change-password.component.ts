@@ -17,17 +17,6 @@ export class ChangePasswordComponent implements OnInit {
       passwordConfirmation: ['', Validators.required]
    });
 
-  
-   this.api.getUser({id:1}).subscribe((response: any) => {
-
-    console.log(response);
-
-    this.form = this.formBuilder.group({
-    password: [response.password, Validators.required],
-    passwordConfirmation: [response.passwordConfirmation, Validators.required],
-   });
-});  
-
  }
 
 ngOnInit(): void {
@@ -36,9 +25,8 @@ ngOnInit(): void {
 onSubmit() {
 
 
-  this.api.editProfile({
+  this.api.changePassword({
     password: this.form.get('password')?.value,
-    posswordConformation : this.form.get('passwordConformation')?.value,
   }).subscribe((response: any) => {
     this.router.navigate(['/login']);
   })
