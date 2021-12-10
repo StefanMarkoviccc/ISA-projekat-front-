@@ -33,11 +33,14 @@ export class ApiService {
   createHouse(data: any){
     return this.http.post(this.url + '/api/houses', data, this.generateHeader());
   }
+  deleteHouse(data: any){
+    return this.http.delete(this.url + '/api/houses/' + data.id, data);
+  }
   editHouse(data: any){
     return this.http.put(this.url + '/api/houses/' + data.id, data, this.generateHeader());
   }
   editProfile(data: any){
-    return this.http.put(this.url + '/api/users/' + data.id, data, this.generateHeader());
+    return this.http.put(this.url + '/api/users/' + 1, data, this.generateHeader());
   }
   getUser(data: any){
     return this.http.get(this.url + '/api/users/' + data.id, this.generateHeader());
@@ -61,8 +64,12 @@ export class ApiService {
     return this.http.get(this.url + '/api/boats/' + data.id, data);
   }
   getBoats(data: any){
-    return this.http.get(this.url + '/api/boats/', this.generateHeader());
+    return this.http.get(this.url + '/api/boats?search='+ data.search, this.generateHeader());
   }
+  getAdventures(data: any){
+    return this.http.get(this.url + '/api/adventures/', this.generateHeader());
+  }
+
   getHouseImages(data: any){
     return this.http.get(this.url + '/api/houseImages/' + data.id, this.generateHeader());
   }

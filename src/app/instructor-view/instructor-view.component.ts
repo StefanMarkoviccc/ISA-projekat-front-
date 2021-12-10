@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-instructor-view',
@@ -9,8 +10,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class InstructorViewComponent implements OnInit {
 
   form: FormGroup
+  adventures: any
 
-  constructor(private formBuilder: FormBuilder) 
+  constructor(private formBuilder: FormBuilder, private api: ApiService) 
   {
     this.form = this.formBuilder.group({
       search: ['']
@@ -18,7 +20,20 @@ export class InstructorViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getAdventures();
   }
 
-  onSubmit() {}
+  getAdventures() {
+    this.api.getAdventures({search: ''}).subscribe((response: any) => {
+      this.adventures = response;
+    })
+  }
+
+  getInstructors(){
+    
+  }
+
+  onSubmit() {
+    this.getAdventures();
+  }
 }

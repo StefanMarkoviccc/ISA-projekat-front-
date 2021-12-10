@@ -42,6 +42,8 @@ import { UpdatesPersonalInformationsComponent } from './updates-personal-informa
 import { RequestDeleteAccountComponent } from './request-delete-account/request-delete-account.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { AdventureReservationComponent } from './adventure-reservation/adventure-reservation.component';
+import { HouseProfileComponent } from './house-profile/house-profile.component';
+import { CreateAvailabilityPeriodHouseComponent } from './create-availability-period-house/create-availability-period-house.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +76,9 @@ import { AdventureReservationComponent } from './adventure-reservation/adventure
     UpdatesPersonalInformationsComponent,
     RequestDeleteAccountComponent,
     ChangePasswordComponent,
-    AdventureReservationComponent
+    AdventureReservationComponent,
+    HouseProfileComponent,
+    CreateAvailabilityPeriodHouseComponent
 
   ],
   imports: [

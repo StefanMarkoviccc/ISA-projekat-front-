@@ -1,0 +1,28 @@
+<div class="page">
+    <mat-card>
+        <mat-card-content>
+            <div class="houses">
+                <div class="house" *ngFor="let house of houses">
+                    <h1 class="title">{{house.name}}</h1>
+                    <p>House name: {{house.name}}</p>
+                    <p>Address: {{house.address}}</p>
+                    <p>Description: {{house.description}}</p>
+                    <p>Rules of conduct: {{house.rulesOfConduct}}
+                    <p>Average grade: {{house.average}}</p>
+                    <p>Price for one night: 50e</p>
+                    <li><a routerLink="/create-avaliability-period-house" routerLinkActive="active">Create availability period</a></li>
+                    <div class="form-group">
+                        <label for="file">Choose File</label>
+                        <input type="file"
+                               id="file"
+                               (change)="handleFileInput($event, house.id)">
+                    </div>
+                    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                        <button mat-raised-button color="primary">Delete</button>
+                    </form>
+                </div>
+                
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

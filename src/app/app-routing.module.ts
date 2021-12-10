@@ -26,6 +26,10 @@ import { RequestDeleteAccountComponent } from './request-delete-account/request-
 import { ReservationListComponent } from './reservation-list/reservation-list.component';
 import { ReservationListClientProfileComponent } from './reservation-list-client-profile/reservation-list-client-profile.component';
 import { UpdatesPersonalInformationsComponent } from './updates-personal-informations/updates-personal-informations.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { HouseProfileComponent } from './house-profile/house-profile.component';
+import { AvailabilityPeriodComponent } from './availability-period/availability-period.component';
+import { CreateAvailabilityPeriodHouseComponent } from './create-availability-period-house/create-availability-period-house.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -54,6 +58,10 @@ const routes: Routes = [
   {path: 'reservation-list-client-profile', component: ReservationListClientProfileComponent},
   {path: 'updates-personal-informations', component: UpdatesPersonalInformationsComponent},
   {path: 'edit-instructor-services', component: EditInstructorServicesComponent},
+  {path: 'change-password', component: ChangePasswordComponent},
+  {path: 'house-profile', component: HouseProfileComponent},
+  {path: 'create-avaliability-period-house', component: CreateAvailabilityPeriodHouseComponent},
+  
 ];
 
 @NgModule({

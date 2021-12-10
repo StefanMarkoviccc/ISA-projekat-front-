@@ -2,14 +2,16 @@
     <mat-card>
         <mat-card-content>
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
-                <h1 class="title">See house info</h1>
-                <p>Adventure name: Pecanje sabljarki</p>
-                <p>Address: Danila Kisa 9</p>
-                <p>Description: Opis avanture</p>
-                <p>Average grade: 5.00</p>
-                <p>Fishing instructor name: Pera Peric</p>
-                <p>...</p>
+                <input type="text" placeholder="Search...">
             </form>
+            <div class="adventures">
+                <div class="adventure" *ngFor="let adventure of adventures">
+                    <h1 class="title">{{adventure.name}}</h1>
+                    <p>Adventure name: {{adventure.name}}</p>
+                    <p>Address: {{adventure.address}}</p>
+                    <p>Description: {{adventure.description}}</p>
+                </div>  
+            </div>  
         </mat-card-content>
     </mat-card>
 </div>
