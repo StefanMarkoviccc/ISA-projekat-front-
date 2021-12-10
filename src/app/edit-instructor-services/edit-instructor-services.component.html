@@ -1,1 +1,55 @@
-<p>edit-instructor-services works!</p>
+<div class="page">
+    <mat-card>
+        <mat-card-content>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <h2>Edit instuctor services</h2>
+                <mat-form-field>
+                    <input matInput placeholder="Name" formControlName="name" required>
+                </mat-form-field> 
+                <mat-form-field>
+                    <input matInput placeholder="Address" formControlName="address" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Langitude" formControlName="langitude" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Longitude" formControlName="longitude" required>
+                </mat-form-field> 
+                <mat-form-field>
+                    <input matInput placeholder="Description" formControlName="description" required>
+                </mat-form-field> 
+                <mat-form-field>
+                    <input matInput placeholder="Biography" formControlName="biography" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Adventure pictures" formControlName="adventurePictures" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Maximum persons" formControlName="maxPersons" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Rules" formControlName="rules" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Fishing equipment" formControlName="fishingEquipment" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Cancelation percent" formControlName="cancelationPercent" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Location" formControlName="location" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Standing" formControlName="standing" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Additional services" formControlName="additionalServices" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Price" formControlName="price" required>
+                </mat-form-field>
+                <button mat-raised-button color="primary">Edit</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

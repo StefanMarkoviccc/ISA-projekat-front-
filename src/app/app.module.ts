@@ -41,6 +41,7 @@ import { OccupancyCalendarComponent } from './occupancy-calendar/occupancy-calen
 import { UpdatesPersonalInformationsComponent } from './updates-personal-informations/updates-personal-informations.component';
 import { RequestDeleteAccountComponent } from './request-delete-account/request-delete-account.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { AdventureReservationComponent } from './adventure-reservation/adventure-reservation.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     OccupancyCalendarComponent,
     UpdatesPersonalInformationsComponent,
     RequestDeleteAccountComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    AdventureReservationComponent
 
   ],
   imports: [

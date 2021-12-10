@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['/boat-owner-home-page']);
           }
           else if(response.userType == "FISHING_INSTRUCTOR") {
-            this.router.navigate(['/']);
+            this.router.navigate(['/instructor-home-page']);
           }
           else if(response.userType == "CLIENT"){
             this.router.navigate(['/client-home-page']);

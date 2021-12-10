@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-availability-period',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AvailabilityPeriodComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup;
+  isAction: any;
 
+  constructor(private formBuilder: FormBuilder) {
+    this.form=this.formBuilder.group({
+      date: ['', Validators.required]
+    });
+   }
   ngOnInit(): void {
   }
 
+  onSubmit() {
+
+  }
 }
