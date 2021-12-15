@@ -16,8 +16,6 @@ export class EditInstructorServicesComponent implements OnInit {
     this.form = this.formBuilder.group({
       name: ['',Validators.required],
       address: ['',Validators.required],
-      langitude: ['',Validators.required],
-      longitude: ['',Validators.required],
       description: ['',Validators.required],
       biography: ['',Validators.required],
       adventurePictures: ['',Validators.required],
@@ -37,8 +35,6 @@ export class EditInstructorServicesComponent implements OnInit {
       this.form = this.formBuilder.group({
         name: [response.name,Validators.required],
         address: [response.type,Validators.required],
-        langitude: [response.length,Validators.required],
-        longitude: [response.engineNumber,Validators.required],
         description: [response.enginePower,Validators.required],
         biography: [response.maxSpeed,Validators.required],
         adventurePictures: [response.address,Validators.required],
@@ -62,8 +58,6 @@ export class EditInstructorServicesComponent implements OnInit {
     this.api.editInstructorServices({
       name: this.form.get('name')?.value,
       address: this.form.get('address')?.value,
-      langitude: this.form.get('langitude')?.value,
-      longitude: this.form.get('longitude')?.value,
       description: this.form.get('description')?.value,
       biography: this.form.get('biography')?.value,
       adventurePictures: this.form.get('adventurePictures')?.value,

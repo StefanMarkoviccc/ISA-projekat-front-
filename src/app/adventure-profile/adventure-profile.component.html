@@ -1,0 +1,37 @@
+<div class="page">
+    <mat-card>
+        <mat-card-content>
+            <div class="adventures">
+                <div class="adventure" *ngFor="let adventure of adventures">
+                    <h1 class="title">Adventure</h1>
+                    <p>Adventure name: Tara</p>
+                    <p>Address: Bulevar Patrijarha Pavla 30</p>
+                    <p>Description: Rafting</p>
+                    <p>Rules of conduct: Obedience, devotion. </p>
+                    <p>Biography: Many years of experience with the river, people ..</p>
+                    <p>Max persons: 15 </p>
+                    <p>Fishing equipment: Diving equipment. </p>
+                    <p>Price for one night: 120 e</p>
+                    <div>
+                        <img *ngFor="let image of images"  [src]="image">
+                    </div>
+                    <div *ngIf="user.userType=='FISHING_INSTRUCTOR'">
+                        <li><a routerLink="/edit-instructor-services" [queryParams]="{id: adventure.id}" routerLinkActive="active">Create adventure</a></li>  
+                        <li><a routerLink="/adventure-reservation" routerLinkActive="active">Make adventure reservation</a></li>
+                        <div class="form-group">
+                            <label for="file">Choose File</label>
+                            <input type="file"
+                                   id="file"
+                                   (change)="handleFileInput($event, adventure.id)">
+                        </div>
+                        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                            <button mat-raised-button color="primary">Delete</button>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+

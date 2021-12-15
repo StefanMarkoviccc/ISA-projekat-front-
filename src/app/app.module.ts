@@ -49,6 +49,7 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { CommonModule } from '@angular/common';
 import { InstructorProfilComponent } from './instructor-profil/instructor-profil.component';
+import { AdventureProfileComponent } from './adventure-profile/adventure-profile.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,10 @@ import { InstructorProfilComponent } from './instructor-profil/instructor-profil
     HouseProfileComponent,
     CreateAvailabilityPeriodHouseComponent,
     HouseBookingHistoryComponent,
-    InstructorProfilComponent
+    InstructorProfilComponent,
+    AdventureProfileComponent,
+    AdventureProfileComponent,
+    AdventureReservationComponent
 
   ],
   imports: [
