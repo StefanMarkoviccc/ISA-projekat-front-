@@ -66,11 +66,17 @@ export class ApiService {
   createBoat(data: any){
     return this.http.post(this.url + '/api/boats', data, this.generateHeader());
   }
+  createAdventure(data: any){
+    return this.http.post(this.url + '/api/adventures', data, this.generateHeader());
+  }
   createAppointment(data: any){
     return this.http.post(this.url + '/api/appointments', data, this.generateHeader());
   }
   editBoat(data: any){
     return this.http.put(this.url + '/api/boats/' + data.id, data, this.generateHeader());
+  }
+  editAdventure(data: any){
+    return this.http.put(this.url + '/api/adventure/' + data.id, data, this.generateHeader());
   }
   getBoat(data: any){
     return this.http.get(this.url + '/api/boats/' + data.id, data);
