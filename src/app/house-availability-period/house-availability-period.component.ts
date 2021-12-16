@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 @Component({
   selector: 'app-house-availability-period',
@@ -10,18 +10,33 @@ import { ApiService } from '../api.service';
 export class HouseAvailabilityPeriodComponent implements OnInit {
 
   form: FormGroup;
+  house: any;
+  id: any;
 
-  constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.form = this.formBuilder.group({
       dateTo: ['', Validators.required],
       dateFrom: ['', Validators.required],
     });
+
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.id = params['id'];
+      console.log(this.id)
+    });
+
+
    }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-
+    this.api.createHouseAvailabilityPeriod({
+      houseId: parseInt(this.id),
+      dateTo: this.form.get('dateTo')?.value,
+      dateFrom: this.form.get('dateFrom')?.value,
+    }).subscribe((response: any) => {
+      this.router.navigate(['/houseView']);
+    })
   }
 }

@@ -33,6 +33,9 @@ export class ApiService {
   createHouse(data: any){
     return this.http.post(this.url + '/api/houses', data, this.generateHeader());
   }
+  createHouseAvailabilityPeriod(data: any){
+    return this.http.post(this.url + '/api/houseAvailabilityPeriods', data, this.generateHeader());
+  }
   deleteHouse(data: any){
     return this.http.delete(this.url + '/api/houses/' + data.id, this.generateHeader());
   }
@@ -57,14 +60,23 @@ export class ApiService {
   getHouses(data: any){
     return this.http.get(this.url + '/api/houses?search='+ data.search, this.generateHeader());
   }
+  getAvailabilityForHouse(data: any){
+    return this.http.get(this.url + '/api/houseAvailabilityPeriods/' + data.id, this.generateHeader());
+  }
   createBoat(data: any){
     return this.http.post(this.url + '/api/boats', data, this.generateHeader());
+  }
+  createAdventure(data: any){
+    return this.http.post(this.url + '/api/adventures', data, this.generateHeader());
   }
   createAppointment(data: any){
     return this.http.post(this.url + '/api/appointments', data, this.generateHeader());
   }
   editBoat(data: any){
     return this.http.put(this.url + '/api/boats/' + data.id, data, this.generateHeader());
+  }
+  editAdventure(data: any){
+    return this.http.put(this.url + '/api/adventure/' + data.id, data, this.generateHeader());
   }
   getBoat(data: any){
     return this.http.get(this.url + '/api/boats/' + data.id, data);
