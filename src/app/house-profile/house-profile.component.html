@@ -16,7 +16,7 @@
                     <div *ngIf="user.userType=='HOUSE_OWNER'">
                         <li><a routerLink="/edit-house" [queryParams]="{id: house.id}" routerLinkActive="active">Edit house</a></li>  
                         <li><a routerLink="/house-booking-history" routerLinkActive="active">Booking history</a></li>      
-                        <li><a routerLink="/house-avaliability-period" routerLinkActive="active">Create availability period</a></li>
+                        <li><a routerLink="/house-avaliability-period" [queryParams]="{id: house.id}" routerLinkActive="active">Create availability period</a></li>
                         <div class="form-group">
                             <label for="file">Choose File</label>
                             <input type="file"
@@ -27,6 +27,12 @@
                             <button mat-raised-button color="primary">Delete</button>
                         </form>
                     </div>
+
+                    <div class="houseAvaliabilityPeriod" *ngFor="let houseAvaliabilityPeriod of houseAvaliabilityPeriods">
+                        <h1 class="title">{{houseAvaliabilityPeriod.dateTo}}</h1>
+                        <h1 class="title">{{houseAvaliabilityPeriod.dateFrom}}</h1>
+                    </div>
+
                 </div>
                 
             </div>

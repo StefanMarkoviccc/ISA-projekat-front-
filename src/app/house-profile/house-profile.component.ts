@@ -37,6 +37,7 @@ export class HouseProfileComponent implements OnInit {
 
   form: FormGroup
   houses: any;
+  houseAvaliabilityPeriods: any;
 
   base64textString: any;
   selectedHouseId: any;
@@ -48,6 +49,9 @@ export class HouseProfileComponent implements OnInit {
     private sanitizer: DomSanitizer,
     private router: Router, private activatedRoute: ActivatedRoute) 
   {
+
+   
+
     let jsonUser = localStorage.getItem('user');
     this.images = [];;
     if(jsonUser) {
@@ -57,15 +61,21 @@ export class HouseProfileComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(params => {
       this.id = params['id'];
     });
+    
 
-
+    
     this.form = this.formBuilder.group({
   
     });
 
     this.getImages();
+
+   this.getAvailabilityPeriods();
+    
   }
 
+
+  
   ngOnInit(): void {
     this.getHouses();
   }
@@ -92,6 +102,16 @@ export class HouseProfileComponent implements OnInit {
     this.api.getHouse({id: this.id}).subscribe((response: any) => {
       this.houses = [response];
     })
+
+    
+  }
+
+  getAvailabilityPeriods() {
+      
+    this.api.getAvailabilityForHouse({id: this.id}).subscribe((response: any) => {
+      this.houseAvaliabilityPeriods = response;
+    })
+
   }
 
   onSubmit() {
