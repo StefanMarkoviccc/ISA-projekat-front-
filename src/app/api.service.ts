@@ -73,6 +73,10 @@ export class ApiService {
     return this.http.get(this.url + '/api/adventures/', this.generateHeader());
   }
 
+  getAdventureImages(data: any){
+    return this.http.get(this.url + '/api/adventureImages/' + data.id, this.generateHeader());
+  }
+
   getHouseImages(data: any){
     return this.http.get(this.url + '/api/houseImages/' + data.id, this.generateHeader());
   }
