@@ -30,7 +30,6 @@ import { EditHouseComponent } from './edit-house/edit-house.component';
 import { EditBoatComponent } from './edit-boat/edit-boat.component';
 import { LoginComponent } from './login/login.component';
 import { InstructorHomePageComponent } from './instructor-home-page/instructor-home-page.component';
-import { EditInstructorServicesComponent } from './edit-instructor-services/edit-instructor-services.component';
 import { AvailabilityPeriodComponent } from './availability-period/availability-period.component';
 import { ReservationListComponent } from './reservation-list/reservation-list.component';
 import { ReservationListClientProfileComponent } from './reservation-list-client-profile/reservation-list-client-profile.component';
@@ -51,6 +50,7 @@ import { CommonModule } from '@angular/common';
 import { InstructorProfilComponent } from './instructor-profil/instructor-profil.component';
 import { AdventureProfileComponent } from './adventure-profile/adventure-profile.component';
 import { BoatProfileComponent } from './boat-profile/boat-profile.component';
+import { HouseAvailabilityPeriodComponent } from './house-availability-period/house-availability-period.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +72,6 @@ import { BoatProfileComponent } from './boat-profile/boat-profile.component';
     EditBoatComponent,
     LoginComponent,
     InstructorHomePageComponent,
-    EditInstructorServicesComponent,
     AvailabilityPeriodComponent,
     ReservationListComponent,
     ReservationListClientProfileComponent,
@@ -91,7 +90,8 @@ import { BoatProfileComponent } from './boat-profile/boat-profile.component';
     AdventureProfileComponent,
     AdventureProfileComponent,
     AdventureReservationComponent,
-    BoatProfileComponent
+    BoatProfileComponent,
+    HouseAvailabilityPeriodComponent
 
   ],
   imports: [
