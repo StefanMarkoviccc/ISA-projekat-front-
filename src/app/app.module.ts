@@ -50,6 +50,8 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { CommonModule } from '@angular/common';
 import { InstructorProfilComponent } from './instructor-profil/instructor-profil.component';
 import { AdventureProfileComponent } from './adventure-profile/adventure-profile.component';
+import { AddAdventureComponent } from './add-adventure/add-adventure.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -89,7 +91,8 @@ import { AdventureProfileComponent } from './adventure-profile/adventure-profile
     InstructorProfilComponent,
     AdventureProfileComponent,
     AdventureProfileComponent,
-    AdventureReservationComponent
+    AdventureReservationComponent,
+    AddAdventureComponent
 
   ],
   imports: [
@@ -107,6 +110,7 @@ import { AdventureProfileComponent } from './adventure-profile/adventure-profile
     MatCheckboxModule,
     HttpClientModule,
     CommonModule,
+    MatFormFieldModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,

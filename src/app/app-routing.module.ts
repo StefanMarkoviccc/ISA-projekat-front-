@@ -32,6 +32,7 @@ import { AvailabilityPeriodComponent } from './availability-period/availability-
 import { CreateAvailabilityPeriodHouseComponent } from './create-availability-period-house/create-availability-period-house.component';
 import { HouseBookingHistoryComponent } from './house-booking-history/house-booking-history.component';
 import { AdventureProfileComponent } from './adventure-profile/adventure-profile.component';
+import { AddAdventureComponent } from './add-adventure/add-adventure.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -65,6 +66,7 @@ const routes: Routes = [
   {path: 'create-avaliability-period-house', component: CreateAvailabilityPeriodHouseComponent},
   {path: 'house-booking-history', component: HouseBookingHistoryComponent},
   {path: 'adventure-profile', component: AdventureProfileComponent},
+  {path: 'add-adventure', component: AddAdventureComponent},
   
 ];
 
