@@ -15,7 +15,6 @@ import { BoatOwnerHomePageComponent } from './boat-owner-home-page/boat-owner-ho
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { EditHouseComponent } from './edit-house/edit-house.component';
 import { EditBoatComponent } from './edit-boat/edit-boat.component';
-import { EditInstructorServicesComponent } from './edit-instructor-services/edit-instructor-services.component';
 import { ClientHomePageComponent } from './client-home-page/client-home-page.component';
 import { InstructorHomePageComponent } from './instructor-home-page/instructor-home-page.component';
 import { NewReservationsComponent } from './new-reservations/new-reservations.component';
@@ -33,6 +32,8 @@ import { CreateAvailabilityPeriodHouseComponent } from './create-availability-pe
 import { HouseBookingHistoryComponent } from './house-booking-history/house-booking-history.component';
 import { AdventureProfileComponent } from './adventure-profile/adventure-profile.component';
 import { AddAdventureComponent } from './add-adventure/add-adventure.component';
+import { BoatProfileComponent } from './boat-profile/boat-profile.component';
+import { HouseAvailabilityPeriodComponent } from './house-availability-period/house-availability-period.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -60,14 +61,14 @@ const routes: Routes = [
   {path: 'reservation-list', component: ReservationListComponent},
   {path: 'reservation-list-client-profile', component: ReservationListClientProfileComponent},
   {path: 'updates-personal-informations', component: UpdatesPersonalInformationsComponent},
-  {path: 'edit-instructor-services', component: EditInstructorServicesComponent},
   {path: 'change-password', component: ChangePasswordComponent},
   {path: 'house-profile', component: HouseProfileComponent},
   {path: 'create-avaliability-period-house', component: CreateAvailabilityPeriodHouseComponent},
   {path: 'house-booking-history', component: HouseBookingHistoryComponent},
   {path: 'adventure-profile', component: AdventureProfileComponent},
   {path: 'add-adventure', component: AddAdventureComponent},
-  
+  {path: 'boat-profile', component: BoatProfileComponent},
+  {path: 'house-avaliability-period', component: HouseAvailabilityPeriodComponent},  
 ];
 
 @NgModule({

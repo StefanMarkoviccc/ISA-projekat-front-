@@ -30,7 +30,6 @@ import { EditHouseComponent } from './edit-house/edit-house.component';
 import { EditBoatComponent } from './edit-boat/edit-boat.component';
 import { LoginComponent } from './login/login.component';
 import { InstructorHomePageComponent } from './instructor-home-page/instructor-home-page.component';
-import { EditInstructorServicesComponent } from './edit-instructor-services/edit-instructor-services.component';
 import { AvailabilityPeriodComponent } from './availability-period/availability-period.component';
 import { ReservationListComponent } from './reservation-list/reservation-list.component';
 import { ReservationListClientProfileComponent } from './reservation-list-client-profile/reservation-list-client-profile.component';
@@ -52,6 +51,8 @@ import { InstructorProfilComponent } from './instructor-profil/instructor-profil
 import { AdventureProfileComponent } from './adventure-profile/adventure-profile.component';
 import { AddAdventureComponent } from './add-adventure/add-adventure.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { BoatProfileComponent } from './boat-profile/boat-profile.component';
+import { HouseAvailabilityPeriodComponent } from './house-availability-period/house-availability-period.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     EditBoatComponent,
     LoginComponent,
     InstructorHomePageComponent,
-    EditInstructorServicesComponent,
     AvailabilityPeriodComponent,
     ReservationListComponent,
     ReservationListClientProfileComponent,
@@ -92,7 +92,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     AdventureProfileComponent,
     AdventureProfileComponent,
     AdventureReservationComponent,
-    AddAdventureComponent
+    AddAdventureComponent,
+    BoatProfileComponent,
+    HouseAvailabilityPeriodComponent
 
   ],
   imports: [

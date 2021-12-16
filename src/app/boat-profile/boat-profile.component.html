@@ -1,0 +1,30 @@
+<div class="page">
+    <mat-card>
+        <mat-card-content>
+            <div class="boats">
+                <div class="boat" *ngFor="let boat of boats">
+                    <h1 class="title">{{boat.name}}</h1>
+                    <p>Boat name: {{boat.name}}</p>
+                    <p>Address: {{boat.address}}</p>
+                    <p>Description: {{boat.description}}</p>
+                    <p>Average grade: {{boat.average}}</p>
+
+                    <div *ngIf="user.userType=='BOAT_OWNER'">
+                        <li><a routerLink="/edit-boat" [queryParams]="{id: boat.id}" routerLinkActive="active">Edit boat</a></li>  
+                        <div class="form-group">
+                            <label for="file">Choose File</label>
+                            <input type="file"
+                                   id="file"
+                                   (change)="handleFileInput($event, boat.id)">
+                        </div>
+                        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                            <button mat-raised-button color="primary">Delete</button>
+                        </form>
+                    </div>
+                </div>
+                    <img *ngFor="let image of images"  [src]="image">
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+
