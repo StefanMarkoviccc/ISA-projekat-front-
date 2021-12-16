@@ -36,6 +36,9 @@ export class ApiService {
   deleteHouse(data: any){
     return this.http.delete(this.url + '/api/houses/' + data.id, this.generateHeader());
   }
+  deleteBoat(data: any){
+    return this.http.delete(this.url + '/api/boats/' + data.id, this.generateHeader());
+  }
   editHouse(data: any){
     return this.http.put(this.url + '/api/houses/' + data.id, data, this.generateHeader());
   }
@@ -79,6 +82,9 @@ export class ApiService {
 
   getHouseImages(data: any){
     return this.http.get(this.url + '/api/houseImages/' + data.id, this.generateHeader());
+  }
+  getBoatImages(data: any){
+    return this.http.get(this.url + '/api/boatImages/' + data.id, this.generateHeader());
   }
 
   createImage(data: any) {
