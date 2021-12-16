@@ -100,8 +100,8 @@ export class BoatProfileComponent implements OnInit {
   handleReaderLoaded(e: any) {
   this.base64textString = ('data:image/png;base64,' + btoa(e.target.result));
 
-  this.api.createImage({
-    houseId: this.selectedBoatId,
+  this.api.createBoatImage({
+    boatId: this.id,
     content: this.base64textString
   }).subscribe((response: any) => {
     this.getImages();

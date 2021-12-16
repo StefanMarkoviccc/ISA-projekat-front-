@@ -90,6 +90,9 @@ export class ApiService {
   createImage(data: any) {
     return this.http.post(this.url + '/api/houseImages', data, this.generateHeader())
   }
+  createBoatImage(data: any) {
+    return this.http.post(this.url + '/api/boatImages', data, this.generateHeader())
+  }
 
   generateHeader() : any {
 

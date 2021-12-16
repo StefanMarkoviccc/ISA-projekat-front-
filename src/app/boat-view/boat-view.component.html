@@ -5,14 +5,9 @@
                 <input type="text" placeholder="Search..." formControlName="search">
                 <button mat-raised-button color="primary">Search</button>
             </form>
-            <div class="boats">
                 <div class="boat" *ngFor="let boat of boats">
                     <h1 class="title">{{boat.name}}</h1>
-                    <p>Boat name: {{boat.name}}</p>
-                    <p>Address: {{boat.address}}</p>
-                    <p>Description: {{boat.description}}</p>
-                    <p>Average grade: {{boat.description}}</p>
-                </div>
+                    <li><a routerLink="/boat-profile" [queryParams]="{id: boat.id}" routerLinkActive="active">See boat</a></li>        
             </div>
         </mat-card-content>
     </mat-card>
