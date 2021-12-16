@@ -47,7 +47,7 @@ export class RegistrationComponent implements OnInit {
         city: this.form.get('city')?.value,
         country: this.form.get('country')?.value,
         phoneNumber: this.form.get('phoneNumber')?.value,
-        userType: this.form.get('userType')?.value,
+        userType: this.selectedType,
         description: this.form.get('description')?.value
       }).subscribe((response: any) => {
         this.router.navigate(['/home']);
@@ -63,7 +63,7 @@ export class RegistrationComponent implements OnInit {
         city: this.form.get('city')?.value,
         country: this.form.get('country')?.value,
         phoneNumber: this.form.get('phoneNumber')?.value,
-        userType: this.form.get('userType')?.value,
+        userType: this.selectedType,
         description: this.form.get('description')?.value,
         }).subscribe((response: any) => {
         this.router.navigate(['/home']);
@@ -79,7 +79,7 @@ export class RegistrationComponent implements OnInit {
         city: this.form.get('city')?.value,
         country: this.form.get('country')?.value,
         phoneNumber: this.form.get('phoneNumber')?.value,
-        userType: this.form.get('userType')?.value,
+        userType: this.selectedType,
         description: this.form.get('description')?.value,
         }).subscribe((response: any) => {
         this.router.navigate(['/home']);
@@ -95,12 +95,11 @@ export class RegistrationComponent implements OnInit {
         city: this.form.get('city')?.value,
         country: this.form.get('country')?.value,
         phoneNumber: this.form.get('phoneNumber')?.value,
-        userType: this.form.get('userType')?.value,
+        userType: this.selectedType,
         description: this.form.get('description')?.value,
         }).subscribe((response: any) => {
         this.router.navigate(['/home']);
       })
     }
   }
-
 }
