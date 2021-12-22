@@ -34,6 +34,7 @@ import { AdventureProfileComponent } from './adventure-profile/adventure-profile
 import { AddAdventureComponent } from './add-adventure/add-adventure.component';
 import { BoatProfileComponent } from './boat-profile/boat-profile.component';
 import { HouseAvailabilityPeriodComponent } from './house-availability-period/house-availability-period.component';
+import { CreateAvailabilityPeriodBoatComponent } from './create-availability-period-boat/create-availability-period-boat.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -68,7 +69,9 @@ const routes: Routes = [
   {path: 'adventure-profile', component: AdventureProfileComponent},
   {path: 'add-adventure', component: AddAdventureComponent},
   {path: 'boat-profile', component: BoatProfileComponent},
-  {path: 'house-avaliability-period', component: HouseAvailabilityPeriodComponent},  
+  {path: 'house-avaliability-period', component: HouseAvailabilityPeriodComponent},
+  {path: 'create-boat-availability-period', component: CreateAvailabilityPeriodBoatComponent},  
+  
 ];
 
 @NgModule({

@@ -36,6 +36,9 @@ export class ApiService {
   createHouseAvailabilityPeriod(data: any){
     return this.http.post(this.url + '/api/houseAvailabilityPeriods', data, this.generateHeader());
   }
+  createBoatAvailabilityPeriod(data: any){
+    return this.http.post(this.url + '/api/boatAvailabilityPeriods', data, this.generateHeader());
+  }
   deleteHouse(data: any){
     return this.http.delete(this.url + '/api/houses/' + data.id, this.generateHeader());
   }
