@@ -36,6 +36,7 @@ import { BoatProfileComponent } from './boat-profile/boat-profile.component';
 import { HouseAvailabilityPeriodComponent } from './house-availability-period/house-availability-period.component';
 import { CreateAvailabilityPeriodBoatComponent } from './create-availability-period-boat/create-availability-period-boat.component';
 import { CreateRoomComponent } from './create-room/create-room.component';
+import { ActionHouseComponent } from './action-house/action-house.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -73,6 +74,7 @@ const routes: Routes = [
   {path: 'house-avaliability-period', component: HouseAvailabilityPeriodComponent},
   {path: 'create-boat-availability-period', component: CreateAvailabilityPeriodBoatComponent},  
   {path: 'create-room', component:CreateRoomComponent},
+  {path: 'action-house', component: ActionHouseComponent},
   
 ];
 

@@ -78,6 +78,9 @@ export class ApiService {
   createAppointment(data: any){
     return this.http.post(this.url + '/api/appointments', data, this.generateHeader());
   }
+  createActionHouse(data: any){
+    return this.http.post(this.url + '/api/actionHouses', data, this.generateHeader());
+  }
   editBoat(data: any){
     return this.http.put(this.url + '/api/boats/' + data.id, data, this.generateHeader());
   }
