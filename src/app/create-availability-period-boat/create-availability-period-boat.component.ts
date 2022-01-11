@@ -33,7 +33,7 @@ export class CreateAvailabilityPeriodBoatComponent implements OnInit {
 
   onSubmit() {
     this.api.createBoatAvailabilityPeriod({
-      houseId: parseInt(this.id),
+      boatId: parseInt(this.id),
       dateTo: this.form.get('dateTo')?.value,
       dateFrom: this.form.get('dateFrom')?.value,
     }).subscribe((response: any) => {

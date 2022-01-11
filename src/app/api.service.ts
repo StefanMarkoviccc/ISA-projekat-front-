@@ -69,6 +69,9 @@ export class ApiService {
   createBoat(data: any){
     return this.http.post(this.url + '/api/boats', data, this.generateHeader());
   }
+  createRoom(data: any){
+    return this.http.post(this.url + '/api/rooms', data, this.generateHeader());
+  }
   createAdventure(data: any){
     return this.http.post(this.url + '/api/adventures', data, this.generateHeader());
   }
@@ -121,7 +124,7 @@ export class ApiService {
     };
   }
   getAllRooms(data: any){
-    return this.http.post(this.url + '/api/rooms', data);
+    return this.http.get(this.url + '/api/rooms', this.generateHeader());
   }
 }
 
