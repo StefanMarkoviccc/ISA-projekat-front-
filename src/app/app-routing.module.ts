@@ -37,6 +37,7 @@ import { HouseAvailabilityPeriodComponent } from './house-availability-period/ho
 import { CreateAvailabilityPeriodBoatComponent } from './create-availability-period-boat/create-availability-period-boat.component';
 import { CreateRoomComponent } from './create-room/create-room.component';
 import { ActionHouseComponent } from './action-house/action-house.component';
+import { ClientReservationPageComponent } from './client-reservation-page/client-reservation-page.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -75,7 +76,7 @@ const routes: Routes = [
   {path: 'create-boat-availability-period', component: CreateAvailabilityPeriodBoatComponent},  
   {path: 'create-room', component:CreateRoomComponent},
   {path: 'action-house', component: ActionHouseComponent},
-  
+  {path: 'client-reservation-page', component: ClientReservationPageComponent},
 ];
 
 @NgModule({

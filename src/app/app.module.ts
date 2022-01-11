@@ -56,6 +56,7 @@ import { HouseAvailabilityPeriodComponent } from './house-availability-period/ho
 import { CreateAvailabilityPeriodBoatComponent } from './create-availability-period-boat/create-availability-period-boat.component';
 import { CreateRoomComponent } from './create-room/create-room.component';
 import { ActionHouseComponent } from './action-house/action-house.component';
+import { ClientReservationPageComponent } from './client-reservation-page/client-reservation-page.component';
 
 @NgModule({
   declarations: [
@@ -100,7 +101,8 @@ import { ActionHouseComponent } from './action-house/action-house.component';
     HouseAvailabilityPeriodComponent,
     CreateAvailabilityPeriodBoatComponent,
     CreateRoomComponent,
-    ActionHouseComponent
+    ActionHouseComponent,
+    ClientReservationPageComponent
 
   ],
   imports: [
