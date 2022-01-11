@@ -14,9 +14,12 @@
                         <img *ngFor="let image of images"  [src]="image">
                     </div>
                     <div *ngIf="user.userType=='HOUSE_OWNER'">
+                        <li><a routerLink="/create-appointment" [queryParams]="{id: house.id}" routerLinkActive="active">Create an appointment</a></li>
+                        <li><a routerLink="/action-house" [queryParams]="{id: house.id}" routerLinkActive="active">Create action</a></li>
                         <li><a routerLink="/edit-house" [queryParams]="{id: house.id}" routerLinkActive="active">Edit house</a></li>  
                         <li><a routerLink="/house-booking-history" routerLinkActive="active">Booking history</a></li>      
                         <li><a routerLink="/house-avaliability-period" [queryParams]="{id: house.id}" routerLinkActive="active">Create availability period</a></li>
+                        <li><a routerLink="/create-room" [queryParams]="{id: house.id}" routerLinkActive="active">Create room</a></li>
                         <div class="form-group">
                             <label for="file">Choose File</label>
                             <input type="file"
