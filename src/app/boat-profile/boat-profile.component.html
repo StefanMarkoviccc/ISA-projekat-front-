@@ -17,6 +17,15 @@
                         <form [formGroup]="form" (ngSubmit)="onSubmit()">
                             <button mat-raised-button color="primary">Delete</button>
                         </form>
+                        <div *ngIf="user.userType=='CLIENT'">
+                            <li><a routerLink="/complain-page" [queryParams]="{id: boat.id}" type="ComplainType = BOAT_COMPLAIN" routerLinkActive="active">File a complaint</a></li>
+                            <div class="form-group">
+                                <label for="file">Choose File</label>
+                                <input type="file"
+                                       id="file"
+                                       (change)="handleFileInput($event, boat.id)">
+                            </div>
+                        </div>
                 </div>
                     <img *ngFor="let image of images"  [src]="image">
             </div>

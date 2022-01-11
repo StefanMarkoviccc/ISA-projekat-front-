@@ -108,6 +108,9 @@ export class ApiService {
   createBoatImage(data: any) {
     return this.http.post(this.url + '/api/boatImages', data, this.generateHeader())
   }
+  failAComplain(data: any) {
+    return this.http.post(this.url + '/api/complains', data, this.generateHeader() )
+  }
 
   generateHeader() : any {
 

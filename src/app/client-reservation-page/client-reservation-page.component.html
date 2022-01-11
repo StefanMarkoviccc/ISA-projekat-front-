@@ -23,7 +23,9 @@
                         <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
                         <mat-datepicker #pickerFrom></mat-datepicker>
                       </mat-form-field>
-                      <p>Number of guests: <input type="text"></p>
+                      <mat-form-field>
+                        <input type= "text" formControlName="Number of guests" required>
+                    </mat-form-field>
                 </mat-form-field>
             </form>
         </mat-card-content>

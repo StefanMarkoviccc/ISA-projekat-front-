@@ -55,6 +55,7 @@ import { BoatProfileComponent } from './boat-profile/boat-profile.component';
 import { HouseAvailabilityPeriodComponent } from './house-availability-period/house-availability-period.component';
 import { CreateAvailabilityPeriodBoatComponent } from './create-availability-period-boat/create-availability-period-boat.component';
 import { ClientReservationPageComponent } from './client-reservation-page/client-reservation-page.component';
+import { ComplainPageComponent } from './complain-page/complain-page.component';
 
 @NgModule({
   declarations: [
@@ -98,7 +99,8 @@ import { ClientReservationPageComponent } from './client-reservation-page/client
     BoatProfileComponent,
     HouseAvailabilityPeriodComponent,
     CreateAvailabilityPeriodBoatComponent,
-    ClientReservationPageComponent
+    ClientReservationPageComponent,
+    ComplainPageComponent
 
   ],
   imports: [

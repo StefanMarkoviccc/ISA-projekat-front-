@@ -36,6 +36,7 @@ import { BoatProfileComponent } from './boat-profile/boat-profile.component';
 import { HouseAvailabilityPeriodComponent } from './house-availability-period/house-availability-period.component';
 import { CreateAvailabilityPeriodBoatComponent } from './create-availability-period-boat/create-availability-period-boat.component';
 import { ClientReservationPageComponent } from './client-reservation-page/client-reservation-page.component';
+import { ComplainPageComponent } from './complain-page/complain-page.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -72,7 +73,8 @@ const routes: Routes = [
   {path: 'boat-profile', component: BoatProfileComponent},
   {path: 'house-avaliability-period', component: HouseAvailabilityPeriodComponent},
   {path: 'create-boat-availability-period', component: CreateAvailabilityPeriodBoatComponent},  
-  {path: 'client-reservation-page', component: ClientReservationPageComponent}
+  {path: 'client-reservation-page', component: ClientReservationPageComponent},
+  {path: 'complain-page', component: ComplainPageComponent},
   
 ];
 

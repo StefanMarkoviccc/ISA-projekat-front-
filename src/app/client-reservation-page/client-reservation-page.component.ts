@@ -23,7 +23,7 @@ export class ClientReservationPageComponent implements OnInit {
       address: ['', Validators.required],
       city: ['', Validators.required],
       country: ['', Validators.required],
-      phoneNumber: ['', Validators.required],
+      phoneNumber: ['', Validators.required], 
       userType: ['', Validators.required],
       description: ['', Validators.required]})
 
@@ -45,7 +45,7 @@ export class ClientReservationPageComponent implements OnInit {
 
     console.log('Test', this.selectedType);
 
-    if(this.selectedType === 'HOUSE_OWNER') {
+    if(this.selectedType === 'HOUSE') {
       this.api.houseOwnerRegistration({
         email: this.form.get('email')?.value,
         password: this.form.get('password')?.value,
@@ -61,7 +61,7 @@ export class ClientReservationPageComponent implements OnInit {
       }).subscribe((response: any) => {
         this.router.navigate(['/home']);
       })
-    }else if(this.selectedType === 'BOAT_OWNER'){
+    }else if(this.selectedType === 'BOAT'){
       this.api.boatOwnerRegistration({
         email: this.form.get('email')?.value,
         password: this.form.get('password')?.value,

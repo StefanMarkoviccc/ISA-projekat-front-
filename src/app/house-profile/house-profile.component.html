@@ -33,8 +33,16 @@
                         <h1 class="title">{{houseAvaliabilityPeriod.dateFrom}}</h1>
                     </div>
 
-                </div>
-                
+                    <div *ngIf="user.userType=='CLIENT'">
+                        <li><a routerLink="/complain-page" [queryParams]="{id: house.id}" routerLinkActive="active">File a complaint</a></li>
+                        <div class="form-group">
+                            <label for="file">Choose File</label>
+                            <input type="file"
+                                   id="file"
+                                   (change)="handleFileInput($event, house.id)">
+                        </div>
+                </div>  
+                </div>  
             </div>
         </mat-card-content>
     </mat-card>
