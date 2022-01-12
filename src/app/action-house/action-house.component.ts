@@ -51,6 +51,9 @@ export class ActionHouseComponent implements OnInit {
    }
 
   onSubmit() {
+
+    console.log(this.form.get('price')?.value)
+
     this.api.createActionHouse({
       houseId: parseInt(this.id),
       roomId: parseInt(this.selectedRoom),

@@ -58,6 +58,8 @@ import { CreateRoomComponent } from './create-room/create-room.component';
 import { ActionHouseComponent } from './action-house/action-house.component';
 import { ClientReservationPageComponent } from './client-reservation-page/client-reservation-page.component';
 import { ComplainPageComponent } from './complain-page/complain-page.component';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -124,6 +126,7 @@ import { ComplainPageComponent } from './complain-page/complain-page.component';
     HttpClientModule,
     CommonModule,
     MatFormFieldModule,
+    NgbModalModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,
