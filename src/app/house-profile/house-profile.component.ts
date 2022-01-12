@@ -183,6 +183,7 @@ export class HouseProfileComponent implements OnInit {
   form: FormGroup
   houses: any;
   houseAvaliabilityPeriods: any;
+  actionsHouse: any;
 
   base64textString: any;
   selectedHouseId: any;
@@ -221,6 +222,7 @@ export class HouseProfileComponent implements OnInit {
       this.houses = [response];
 
       this.getAvailabilityPeriods();
+      this.getActionsHouse();
     })
 
     
@@ -245,6 +247,27 @@ export class HouseProfileComponent implements OnInit {
 
 
     })
+
+  }
+
+  getActionsHouse() {
+
+    this.api.getActionForHouse({id: this.id}).subscribe((response: any) => {
+      this.actionsHouse = response;
+
+      for(let event of this.actionsHouse){
+        console.log(event)  
+        this.events.push({
+            start: new Date(event.dateFrom),
+            end: new Date(event.dateTo),
+            title: this.houses ? this.houses[0].name : 'House',
+            color: colors.blue,
+            actions: this.actionsHouse,
+            allDay: true,
+          });
+      }
+
+    });
 
   }
 

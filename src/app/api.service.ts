@@ -66,6 +66,9 @@ export class ApiService {
   getAvailabilityForHouse(data: any){
     return this.http.get(this.url + '/api/houseAvailabilityPeriods/' + data.id, this.generateHeader());
   }
+  getActionForHouse(data: any){
+    return this.http.get(this.url + '/api/actionHouses/' + data.id, this.generateHeader());
+  }
   createBoat(data: any){
     return this.http.post(this.url + '/api/boats', data, this.generateHeader());
   }
