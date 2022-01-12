@@ -15,6 +15,7 @@ export class HouseViewComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private api: ApiService) 
   {
+    
     this.form = this.formBuilder.group({
       search: ['']
     });

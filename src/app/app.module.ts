@@ -59,6 +59,7 @@ import { ActionHouseComponent } from './action-house/action-house.component';
 import { ClientReservationPageComponent } from './client-reservation-page/client-reservation-page.component';
 import { ComplainPageComponent } from './complain-page/complain-page.component';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { ActionBoatComponent } from './action-boat/action-boat.component';
 
 
 @NgModule({
@@ -108,6 +109,7 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     CreateRoomComponent,
     ActionHouseComponent,
     ClientReservationPageComponent,
+    ActionBoatComponent,
 
   ],
   imports: [

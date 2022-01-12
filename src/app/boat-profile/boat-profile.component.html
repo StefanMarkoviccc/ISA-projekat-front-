@@ -14,6 +14,11 @@
                                    id="file"
                                    (change)="handleFileInput($event, boat.id)">
                         </div>
+                        <div *ngIf="user.userType=='BOAT_OWNER'">
+                            <li><a routerLink="/action-boat" [queryParams]="{id: boat.id}" routerLinkActive="active">Create action</a></li>
+                            <li><a routerLink="/edit-boat" [queryParams]="{id: boat.id}" routerLinkActive="active">Edit Boat</a></li>  
+                            <li><a routerLink="/boat-avaliability-period" [queryParams]="{id: boat.id}" routerLinkActive="active">Create availability period</a></li>
+                        </div>
                         <form [formGroup]="form" (ngSubmit)="onSubmit()">
                             <button mat-raised-button color="primary">Delete</button>
                         </form>

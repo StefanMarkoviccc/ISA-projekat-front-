@@ -17,6 +17,13 @@ export class BoatViewComponent implements OnInit {
     this.form = this.formBuilder.group({
       search: ['']
     });
+
+    this.api.getBoat({id:1}).subscribe((response: any) => {
+
+      this.form = this.formBuilder.group({
+
+    });
+  });
   }
 
   ngOnInit(): void {
