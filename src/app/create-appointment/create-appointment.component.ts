@@ -68,6 +68,8 @@ export class CreateAppointmentComponent implements OnInit {
     })
 
     //EMAIL SERVICE
+    //CHECK BOX
+    //DODATNE USLUGE
   }
 
 }
