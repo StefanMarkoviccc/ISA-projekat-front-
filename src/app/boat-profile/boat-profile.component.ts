@@ -68,6 +68,8 @@ export class BoatProfileComponent implements OnInit {
 
   viewDate: Date = new Date();
 
+  form: FormGroup
+
 
   constructor(private formBuilder: FormBuilder, private api: ApiService, 
     private sanitizer: DomSanitizer,
@@ -85,7 +87,7 @@ export class BoatProfileComponent implements OnInit {
 
 
     this.form = this.formBuilder.group({
-  
+    
     });
 
     this.getImages();
@@ -175,7 +177,6 @@ export class BoatProfileComponent implements OnInit {
   }
 
 
-  form: FormGroup
   boats: any;
   boatAvaliabilityPeriods: any;
   actionsBoat: any;
@@ -216,6 +217,7 @@ export class BoatProfileComponent implements OnInit {
     })
 
     this.getAvailabilityPeriods();
+    this.getActions();
   }
 
   getAvailabilityPeriods() {
