@@ -66,6 +66,15 @@ export class ApiService {
   getAvailabilityForHouse(data: any){
     return this.http.get(this.url + '/api/houseAvailabilityPeriods/' + data.id, this.generateHeader());
   }
+  getAvailabilityForBoat(data: any){
+    return this.http.get(this.url + '/api/boatAvailabilityPeriods/' + data.id, this.generateHeader());
+  }
+  getActionForHouse(data: any){
+    return this.http.get(this.url + '/api/actionHouses/' + data.id, this.generateHeader());
+  }
+  getActionForBoat(data: any){
+    return this.http.get(this.url + '/api/actionBoats/' + data.id, this.generateHeader());
+  }
   createBoat(data: any){
     return this.http.post(this.url + '/api/boats', data, this.generateHeader());
   }
@@ -78,8 +87,14 @@ export class ApiService {
   createAppointment(data: any){
     return this.http.post(this.url + '/api/appointments', data, this.generateHeader());
   }
+  createBoatAppointment(data: any){
+    return this.http.post(this.url + '/api/boatAppointments', data, this.generateHeader());
+  }
   createActionHouse(data: any){
     return this.http.post(this.url + '/api/actionHouses', data, this.generateHeader());
+  }
+  createActionBoat(data: any){
+    return this.http.post(this.url + '/api/actionBoats', data, this.generateHeader());
   }
   editBoat(data: any){
     return this.http.put(this.url + '/api/boats/' + data.id, data, this.generateHeader());
