@@ -222,7 +222,6 @@ export class HouseProfileComponent implements OnInit {
       this.houses = [response];
 
       this.getAvailabilityPeriods();
-      this.getActionsHouse();
     })
 
     

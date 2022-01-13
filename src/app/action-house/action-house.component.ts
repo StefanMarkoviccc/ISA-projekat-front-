@@ -40,12 +40,11 @@ export class ActionHouseComponent implements OnInit {
 
     this.rooms = [];
 
-    this.api.getAllRooms({
-
+    this.api.getRoomsForHouse({
+      id:  parseInt(this.id)
     }).subscribe((response: any) => {
       this.rooms = response;
     })
-
 
 
    }

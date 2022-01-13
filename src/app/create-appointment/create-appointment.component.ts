@@ -25,7 +25,8 @@ export class CreateAppointmentComponent implements OnInit {
       duration: ['', Validators.required],
       maxPersons: ['', Validators.required],
       price: ['', Validators.required],
-      isAction: ['', Validators.required]
+      isAction: ['', Validators.required],
+      additionalServices: ['', Validators.required],
     });
 
     this.activatedRoute.queryParams.subscribe(params => {
@@ -41,9 +42,10 @@ export class CreateAppointmentComponent implements OnInit {
   ngOnInit(): void {
 
     this.rooms = [];
+    console.log(this.id)
 
-    this.api.getAllRooms({
-
+    this.api.getRoomsForHouse({
+      id:  parseInt(this.id)
     }).subscribe((response: any) => {
       this.rooms = response;
     })
@@ -63,6 +65,7 @@ export class CreateAppointmentComponent implements OnInit {
       maxPersons: this.form.get('maxPersons')?.value,
       price: this.form.get('price')?.value,
       isAction: this.form.get('isAction')?.value,
+      additionalServices: this.form.get('additionalServices')?.value,
     }).subscribe((response: any) => {
       this.router.navigate(['/house-owner-home-page']);
     })

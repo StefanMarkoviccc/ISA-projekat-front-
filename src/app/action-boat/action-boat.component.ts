@@ -24,7 +24,6 @@ export class ActionBoatComponent implements OnInit {
 
     });
 
-    //NE POKUPI ID BRODA
 
     this.activatedRoute.queryParams.subscribe(params => {
       this.id = params['id'];
