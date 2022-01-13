@@ -4,8 +4,12 @@
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <h2>Reservation</h2>
                     <mat-form-field>
-                        <input matInput placeholder="Entity" formControlName="entity" required>
-                    </mat-form-field> 
+                        <mat-select [(ngModel)]="selectedType" formControlName="entity">
+                            <mat-option value="House">House</mat-option>
+                            <mat-option value="Boat">Boat</mat-option>
+                            <mat-option value="Advneture">Advneture</mat-option>
+                        </mat-select>
+                    </mat-form-field>
                     <mat-form-field appearance="fill">
                         <mat-label>Choose a date to:</mat-label>
                         <input matInput [matDatepicker]="pickerTo" required formControlName="dateTo">
