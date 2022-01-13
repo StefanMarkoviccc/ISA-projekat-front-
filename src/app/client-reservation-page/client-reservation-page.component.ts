@@ -21,11 +21,6 @@ export class ClientReservationPageComponent implements OnInit {
       dateFrom: ['', Validators.required],
       entity: [''],
     });
-    
-    this.activatedRoute.queryParams.subscribe(params => {
-      this.startDate = params['startDate'];
-      this.endDate = params['endDate'];
-    });
   
 
    }
@@ -34,12 +29,18 @@ export class ClientReservationPageComponent implements OnInit {
   }
 
   onSubmit() {
+
+    this.startDate = this.form.get('dateTo')?.value;
+    this.endDate = this.form.get('dateFrom')?.value;
+
+
 // prikazi samo izmedju dva datuma i da ovo bude combo box
     if(this.selectedType=='House'){
       this.api.getHouses({
-        
+        dateTo: this.endDate,
+        dateFrom: this.startDate,
       }).subscribe((response: any) => {
-        this.router.navigate(['/houseView'])
+        this.router.navigate(['/houseView'], { queryParams: { startDate: this.startDate, endDate: this.endDate} })
       })
     }else if(this.selectedType=='Boat'){
       this.api.getBoats({

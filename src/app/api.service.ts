@@ -132,6 +132,9 @@ export class ApiService {
   failAComplain(data: any) {
     return this.http.post(this.url + '/api/complains', data, this.generateHeader() )
   }
+  searchByDate(data: any) {
+    return this.http.post(this.url + '/api/houses/search', data,this.generateHeader())
+  }
 
   generateHeader() : any {
 
