@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
 
 
@@ -12,35 +13,51 @@ export class HouseViewComponent implements OnInit {
 
   form: FormGroup
   houses: any;
+  startDate: any;
+  endDate: any;
 
-  constructor(private formBuilder: FormBuilder, private api: ApiService) 
+  constructor(private formBuilder: FormBuilder, private api: ApiService, private activatedRoute: ActivatedRoute) 
   {
     
     this.form = this.formBuilder.group({
       search: ['']
     });
 
-    
-    this.api.getHouse({id:1}).subscribe((response: any) => {
+  
 
-      this.form = this.formBuilder.group({
-
-    });
-  }); 
+  this.activatedRoute.queryParams.subscribe(params => {
+    this.startDate = params['startDate'];
+    this.endDate = params['endDate'];
+  });
 
   }
 
   ngOnInit(): void {
     this.getHouses();
+    
   }
 
   getHouses() {
 
-    let search = this.form.get('search')?.value ? this.form.get('search')?.value : '' 
+    
+    console.log(this.startDate)
+    console.log(this.endDate)
+    
+    if(this.startDate && this.endDate) {
+      this.api.searchByDate({startDate: new Date(this.startDate), endDate: new Date(this.endDate) }).subscribe((response: any) => {
+        this.houses = response;
+        
+      })
+    }
+    else {
+      let search = this.form.get('search')?.value ? this.form.get('search')?.value : '' 
 
-    this.api.getHouses({search: search}).subscribe((response: any) => {
-      this.houses = response;
-    })
+      this.api.getHouses({search: search}).subscribe((response: any) => {
+        this.houses = response;
+      })
+      
+    }
+
   }
 
   onSubmit() {
