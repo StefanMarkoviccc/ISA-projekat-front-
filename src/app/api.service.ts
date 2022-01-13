@@ -103,7 +103,7 @@ export class ApiService {
     return this.http.put(this.url + '/api/adventure/' + data.id, data, this.generateHeader());
   }
   getBoat(data: any){
-    return this.http.get(this.url + '/api/boats/' + data.id, data);
+    return this.http.get(this.url + '/api/boats/' + data.id, this.generateHeader());
   }
   getBoats(data: any){
     return this.http.get(this.url + '/api/boats?search='+ data.search, this.generateHeader());

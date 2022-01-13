@@ -186,6 +186,7 @@ export class BoatProfileComponent implements OnInit {
   id: any;
   user: any;
   images: any;
+  boat: any;
 
   
 
@@ -209,15 +210,13 @@ export class BoatProfileComponent implements OnInit {
   }
 
   getBoats() {
-
     let search = this.form.get('search')?.value ? this.form.get('search')?.value : '' 
 
-    this.api.getBoats({id: this.id}).subscribe((response: any) => {
+    this.api.getBoat({id: this.id}).subscribe((response: any) => {
       this.boats = [response];
     })
 
     this.getAvailabilityPeriods();
-    this.getActions();
   }
 
   getAvailabilityPeriods() {
