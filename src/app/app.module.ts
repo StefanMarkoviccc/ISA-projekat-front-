@@ -60,6 +60,7 @@ import { ClientReservationPageComponent } from './client-reservation-page/client
 import { ComplainPageComponent } from './complain-page/complain-page.component';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { ActionBoatComponent } from './action-boat/action-boat.component';
+import { MakeHouseReservationClientComponent } from './make-house-reservation-client/make-house-reservation-client.component';
 
 
 @NgModule({
@@ -110,6 +111,7 @@ import { ActionBoatComponent } from './action-boat/action-boat.component';
     ActionHouseComponent,
     ClientReservationPageComponent,
     ActionBoatComponent,
+    MakeHouseReservationClientComponent,
 
   ],
   imports: [

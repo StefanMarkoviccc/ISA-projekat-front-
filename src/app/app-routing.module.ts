@@ -40,6 +40,7 @@ import { ActionHouseComponent } from './action-house/action-house.component';
 import { ClientReservationPageComponent } from './client-reservation-page/client-reservation-page.component';
 import { ComplainPageComponent } from './complain-page/complain-page.component';
 import { ActionBoatComponent } from './action-boat/action-boat.component';
+import { MakeHouseReservationClientComponent } from './make-house-reservation-client/make-house-reservation-client.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -82,6 +83,7 @@ const routes: Routes = [
   {path: 'action-house', component: ActionHouseComponent},
   {path: 'client-reservation-page', component: ClientReservationPageComponent},
   {path: 'action-boat', component: ActionBoatComponent},
+  {path: 'make-house-reservation-client', component: MakeHouseReservationClientComponent}
 ];
 
 @NgModule({
