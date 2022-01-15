@@ -36,7 +36,7 @@ export class ComplainPageComponent implements OnInit {
     this.api.failAComplain({
       id: this.id,
       type: this.type,
-      text: this.form.get('name')?.value,    
+      text: this.form.get('text')?.value,    
     }).subscribe((response: any) => {
       this.router.navigate(['/client-home-page']);
     })
