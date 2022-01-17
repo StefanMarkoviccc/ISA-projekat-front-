@@ -12,6 +12,8 @@ export class HouseAvailabilityPeriodComponent implements OnInit {
   form: FormGroup;
   house: any;
   id: any;
+  isTaken: any;
+  showMessage: any;
 
   constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.form = this.formBuilder.group({
@@ -24,6 +26,7 @@ export class HouseAvailabilityPeriodComponent implements OnInit {
       console.log(this.id)
     });
 
+    this.showMessage = false;
 
    }
 
@@ -36,7 +39,12 @@ export class HouseAvailabilityPeriodComponent implements OnInit {
       dateTo: this.form.get('dateTo')?.value,
       dateFrom: this.form.get('dateFrom')?.value,
     }).subscribe((response: any) => {
+
       this.router.navigate(['/houseView']);
+      
+    }, (error: any) => {
+      this.showMessage = true;
     })
+
   }
 }

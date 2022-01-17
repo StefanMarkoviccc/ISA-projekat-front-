@@ -16,14 +16,15 @@ export class ActionHouseComponent implements OnInit {
   rooms: any;
   selectedRoom: any;
   id: any;
+  isAction: any;
 
   constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.form = this.formBuilder.group({
       room: ['', Validators.required],
-      dateTo: ['', Validators.required],
-      dateFrom: ['', Validators.required],
+      date: ['', Validators.required],
       price: ['', Validators.required],
-
+      duration:  ['', Validators.required],
+      maxPersons: ['', Validators.required],
     });
 
     this.activatedRoute.queryParams.subscribe(params => {
@@ -33,6 +34,8 @@ export class ActionHouseComponent implements OnInit {
 
 
     this.rooms = [];
+
+    this.isAction = true;
 
    }
 
@@ -51,14 +54,17 @@ export class ActionHouseComponent implements OnInit {
 
   onSubmit() {
 
-    console.log(this.form.get('price')?.value)
+    console.log(this.form.get('maxPersons')?.value,
+    )
 
-    this.api.createActionHouse({
+    this.api.createAppointment({
       houseId: parseInt(this.id),
       roomId: parseInt(this.selectedRoom),
-      dateTo: this.form.get('dateTo')?.value,
-      dateFrom: this.form.get('dateFrom')?.value,
-      price: this.form.get('price')?.value
+      date: this.form.get('date')?.value,
+      duration: this.form.get('duration')?.value,
+      maxPersons: this.form.get('maxPersons')?.value,
+      price: this.form.get('price')?.value,
+      action: this.isAction
     }).subscribe((response: any) => {
       this.router.navigate(['/houseView']);
     })

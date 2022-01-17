@@ -239,7 +239,7 @@ export class HouseProfileComponent implements OnInit {
             start: new Date(event.dateFrom),
             end: new Date(event.dateTo),
             title: this.houses ? this.houses[0].name : 'House',
-            color: colors.red,
+            color: colors.green,
             actions: this.actions,
             allDay: true,
           });

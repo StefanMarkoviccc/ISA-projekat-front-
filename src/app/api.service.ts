@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { th } from 'date-fns/locale';
 
 @Injectable({
   providedIn: 'root'
@@ -152,6 +153,9 @@ export class ApiService {
   }
   getAllRooms(data: any){
     return this.http.get(this.url + '/api/rooms', this.generateHeader());
+  }
+  getIsHouseTaken(data: any){
+    return this.http.get(this.url + '/api/api/houses/house/' + data.id, this.generateHeader());
   }
 }
 
