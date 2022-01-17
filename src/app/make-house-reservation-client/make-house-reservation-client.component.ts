@@ -16,6 +16,7 @@ export class MakeHouseReservationClientComponent implements OnInit {
   id: any;
   dateFrom: any;
   dateTo: any;
+  userId: any;
 
   constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router,private activatedRoute: ActivatedRoute) {
     this.form = this.formBuilder.group({
@@ -23,6 +24,7 @@ export class MakeHouseReservationClientComponent implements OnInit {
       date: ['', Validators.required],
       duration: ['', Validators.required],
       maxPersons: ['', Validators.required],
+      additionalServices: ['', Validators.required],
     });
 
     this.activatedRoute.queryParams.subscribe(params => {
@@ -51,17 +53,27 @@ export class MakeHouseReservationClientComponent implements OnInit {
 
   onSubmit() {
 
-    console.log(this.selectedRoom)
+    
 
-    this.api.createAppointment({
-      houseId: parseInt(this.id),
-      roomId: parseInt(this.selectedRoom),
-      date: this.form.get('date')?.value,
-      duration: this.form.get('duration')?.value,
-      maxPersons: this.form.get('maxPersons')?.value,
+    this.api.getCurrentUser().subscribe((response: any) => {
+      localStorage.setItem('user', JSON.stringify(response));
 
-    }).subscribe((response: any) => {
-      this.router.navigate(['/client-home-page']);
-    })
+      this.userId = response.id;
+
+      this.api.createAppointment({
+        houseId: parseInt(this.id),
+        roomId: parseInt(this.selectedRoom),
+        clientId: parseInt(this.userId),
+        date: this.form.get('date')?.value,
+        duration: this.form.get('duration')?.value,
+        maxPersons: this.form.get('maxPersons')?.value,
+        additionalServices: this.form.get('additionalServices')?.value,
+      }).subscribe((response: any) => {
+        this.router.navigate(['/client-home-page']);
+      })
+    });
+
+
+
   }
 }
