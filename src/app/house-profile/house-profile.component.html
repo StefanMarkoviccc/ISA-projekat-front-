@@ -20,6 +20,7 @@
                         <li><a routerLink="/house-booking-history" routerLinkActive="active">Booking history</a></li>      
                         <li><a routerLink="/house-avaliability-period" [queryParams]="{id: house.id}" routerLinkActive="active">Create availability period</a></li>
                         <li><a routerLink="/create-room" [queryParams]="{id: house.id}" routerLinkActive="active">Create room</a></li>
+                        <li><a routerLink="/reservation-list" [queryParams]="{id: house.id}" routerLinkActive="active">All reservations</a></li>
                         <div class="form-group">
                             <label for="file">Choose File</label>
                             <input type="file"

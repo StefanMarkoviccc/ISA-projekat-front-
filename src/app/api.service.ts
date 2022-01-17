@@ -146,6 +146,9 @@ export class ApiService {
     return this.http.get(this.url + '/api/appointments/user/' + data.id, this.generateHeader())
   }
 
+  getAppointmentsByHouse(data: any) {
+    return this.http.get(this.url + '/api/appointments/house/' + data.id, this.generateHeader())
+  }
   generateHeader() : any {
 
     const headers = {

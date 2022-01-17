@@ -86,6 +86,7 @@ const routes: Routes = [
   {path: 'action-boat', component: ActionBoatComponent},
   {path: 'make-house-reservation-client', component: MakeHouseReservationClientComponent},
   {path: 'see-reservations-client', component: SeeReservationsClientComponent},  
+  {path: 'reservation-list', component:ReservationListComponent},
 ];
 
 @NgModule({
