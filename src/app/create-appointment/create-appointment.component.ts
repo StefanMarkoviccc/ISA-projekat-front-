@@ -17,6 +17,7 @@ export class CreateAppointmentComponent implements OnInit {
   id: any;
   dateFrom: any;
   dateTo: any;
+  clientId: any;
 
   constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router,private activatedRoute: ActivatedRoute) {
     this.form = this.formBuilder.group({
@@ -36,6 +37,8 @@ export class CreateAppointmentComponent implements OnInit {
 
 
     this.rooms = [];
+
+    this.clientId=1;
 
    }
 
@@ -59,6 +62,7 @@ export class CreateAppointmentComponent implements OnInit {
 
     this.api.createAppointment({
       houseId: parseInt(this.id),
+      clientId: parseInt(this.clientId),
       roomId: parseInt(this.selectedRoom),
       date: this.form.get('date')?.value,
       duration: this.form.get('duration')?.value,
