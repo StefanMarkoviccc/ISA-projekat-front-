@@ -5,6 +5,12 @@
                 <h2>Create appointment</h2>
                 <mat-form-field>
                     <mat-label>Select an options</mat-label>
+                    <mat-select formControlName="user" [(ngModel)]="selectedUser">
+                        <mat-option *ngFor="let user of users" value="{{user.id}}">{{user.firstName}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Select an options</mat-label>
                     <mat-select formControlName="room" [(ngModel)]="selectedRoom">
                         <mat-option *ngFor="let room of rooms" value="{{room.id}}">{{room.roomNumber}}</mat-option>
                     </mat-select>

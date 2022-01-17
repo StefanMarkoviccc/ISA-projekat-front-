@@ -14,14 +14,17 @@ export class CreateAppointmentComponent implements OnInit {
   selectedRoom: any;
   isAction: any;
   rooms: any;
+  users: any;
   id: any;
   dateFrom: any;
   dateTo: any;
   clientId: any;
+  selectedUser: any;
 
   constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router,private activatedRoute: ActivatedRoute) {
     this.form = this.formBuilder.group({
       room: ['', Validators.required],
+      user: ['', Validators.required],
       date: ['', Validators.required],
       duration: ['', Validators.required],
       maxPersons: ['', Validators.required],
@@ -38,6 +41,8 @@ export class CreateAppointmentComponent implements OnInit {
 
     this.rooms = [];
 
+    this.users= [];
+
     this.clientId=1;
 
    }
@@ -53,16 +58,25 @@ export class CreateAppointmentComponent implements OnInit {
       this.rooms = response;
     })
 
+    this.api.getClients({
+  
+    }).subscribe((response: any) => {
+        this.users=response;
+    })
+
+    console.log(this.users);
+
 
   }
 
   onSubmit() {
 
     console.log(this.selectedRoom)
+    
 
     this.api.createAppointment({
       houseId: parseInt(this.id),
-      clientId: parseInt(this.clientId),
+      clientId: parseInt(this.selectedUser),
       roomId: parseInt(this.selectedRoom),
       date: this.form.get('date')?.value,
       duration: this.form.get('duration')?.value,
