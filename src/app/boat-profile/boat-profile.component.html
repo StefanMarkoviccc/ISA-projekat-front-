@@ -6,7 +6,7 @@
                     <h1 class="title">{{boat.name}}</h1>
                     <p>Boat name: {{boat.name}}</p>
                     <p>Address: {{boat.address}}</p>
-                    <p>Description: {{boat.description}}</p>
+                    <p>Description: {{boat.promotionalDescription}}</p>
                     <p>Average grade: {{boat.average}}</p>
                         <div class="form-group">
                             <label for="file">Choose File</label>
@@ -14,119 +14,16 @@
                                    id="file"
                                    (change)="handleFileInput($event, boat.id)">
                         </div>
-                        <div *ngIf="user.userType=='BOAT_OWNER'">
-                            <li><a routerLink="/action-boat" [queryParams]="{id: boat.id}" routerLinkActive="active">Create action</a></li>
-                            <li><a routerLink="/edit-boat" [queryParams]="{id: boat.id}" routerLinkActive="active">Edit Boat</a></li>  
-                            <li><a routerLink="/create-boat-availability-period" [queryParams]="{id: boat.id}" routerLinkActive="active">Create availability period</a></li>
-                            <li><a routerLink="/create-boat-appointment" [queryParams]="{id: boat.id}" routerLinkActive="active">Create an appointment</a></li>
+                        <div *ngIf="user.userType=='CLIENT'">
+                            <li><a routerLink="/complain-page" [queryParams]="{id: boat.id, type: 3}" routerLinkActive="active">File a complaint</a></li>
                         </div>
                         <form [formGroup]="form" (ngSubmit)="onSubmit()">
                             <button mat-raised-button color="primary">Delete</button>
                         </form>
-                        <div *ngIf="user.userType=='CLIENT'">
-                            <li><a routerLink="/complain-page" [queryParams]="{id: boat.id}" type="ComplainType = BOAT_COMPLAIN" routerLinkActive="active">File a complaint</a></li>
-                            <div class="form-group">
-                                <label for="file">Choose File</label>
-                                <input type="file"
-                                       id="file"
-                                       (change)="handleFileInput($event, boat.id)">
-                            </div>
-                        </div>
                 </div>
                     <img *ngFor="let image of images"  [src]="image">
             </div>
         </mat-card-content>
-    </mat-card>
-
-    <mat-card>
-        <div class="row text-center">
-            <div class="col-md-4">
-              <div class="btn-group">
-                <div
-                  class="btn btn-primary"
-                  mwlCalendarPreviousView
-                  [view]="view"
-                  [(viewDate)]="viewDate"
-                  (viewDateChange)="closeOpenMonthViewDay()"
-                >
-                  Previous
-                </div>
-                <div
-                  class="btn btn-outline-secondary"
-                  mwlCalendarToday
-                  [(viewDate)]="viewDate"
-                >
-                  Today
-                </div>
-                <div
-                  class="btn btn-primary"
-                  mwlCalendarNextView
-                  [view]="view"
-                  [(viewDate)]="viewDate"
-                  (viewDateChange)="closeOpenMonthViewDay()"
-                >
-                  Next
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
-            </div>
-            <div class="col-md-4">
-              <div class="btn-group">
-                <div
-                  class="btn btn-primary"
-                  (click)="setView(CalendarView.Month)"
-                  [class.active]="view === CalendarView.Month"
-                >
-                  Month
-                </div>
-                <div
-                  class="btn btn-primary"
-                  (click)="setView(CalendarView.Week)"
-                  [class.active]="view === CalendarView.Week"
-                >
-                  Week
-                </div>
-                <div
-                  class="btn btn-primary"
-                  (click)="setView(CalendarView.Day)"
-                  [class.active]="view === CalendarView.Day"
-                >
-                  Day
-                </div>
-              </div>
-            </div>
-          </div>
-          <br />
-          <div [ngSwitch]="view">
-            <mwl-calendar-month-view
-              *ngSwitchCase="CalendarView.Month"
-              [viewDate]="viewDate"
-              [events]="events"
-              [refresh]="refresh"
-              [activeDayIsOpen]="activeDayIsOpen"
-              (dayClicked)="dayClicked($event.day)"
-              (eventTimesChanged)="eventTimesChanged($event)"
-            >
-            </mwl-calendar-month-view>
-            <mwl-calendar-week-view
-              *ngSwitchCase="CalendarView.Week"
-              [viewDate]="viewDate"
-              [events]="events"
-              [refresh]="refresh"
-              (eventTimesChanged)="eventTimesChanged($event)"
-            >
-            </mwl-calendar-week-view>
-            <mwl-calendar-day-view
-              *ngSwitchCase="CalendarView.Day"
-              [viewDate]="viewDate"
-              [events]="events"
-              [refresh]="refresh"
-              (eventTimesChanged)="eventTimesChanged($event)"
-            >
-            </mwl-calendar-day-view>
-          </div>
     </mat-card>
 </div>
 

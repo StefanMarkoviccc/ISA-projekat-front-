@@ -1,0 +1,11 @@
+<div class="page">
+    <mat-card>
+        <mat-card-content>
+            <div class="appointment" *ngFor="let appointment of appointments">
+                <h1 class="title">{{appointment.house.name}}</h1>
+                <h1 class="title">{{appointment.date}}</h1>
+                <h1 class="title">{{appointment.duration}}</h1> 
+             </div>
+        </mat-card-content>
+    </mat-card>
+</div>
