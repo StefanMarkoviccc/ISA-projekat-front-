@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { id } from 'date-fns/locale';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -45,6 +46,8 @@ export class LoginComponent implements OnInit {
           }
           else if(response.userType == "CLIENT"){
             this.router.navigate(['/client-home-page']);
+          }else if(response.userType == "ADMINISTRATOR") {
+            this.router.navigate(['/admin-home-page']);
           }
         });
       });

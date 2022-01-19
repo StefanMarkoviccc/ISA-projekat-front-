@@ -42,6 +42,9 @@ import { ComplainPageComponent } from './complain-page/complain-page.component';
 import { ActionBoatComponent } from './action-boat/action-boat.component';
 import { MakeHouseReservationClientComponent } from './make-house-reservation-client/make-house-reservation-client.component';
 import { SeeReservationsClientComponent } from './see-reservations-client/see-reservations-client.component';
+import { AdminHomePageComponent } from './admin-home-page/admin-home-page.component';
+import { SeeAllComplainsComponent } from './see-all-complains/see-all-complains.component';
+import { DisableAccountRequestPageComponent } from './disable-account-request-page/disable-account-request-page.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -85,7 +88,10 @@ const routes: Routes = [
   {path: 'client-reservation-page', component: ClientReservationPageComponent},
   {path: 'action-boat', component: ActionBoatComponent},
   {path: 'make-house-reservation-client', component: MakeHouseReservationClientComponent},
-  {path: 'see-reservations-client', component: SeeReservationsClientComponent},  
+  {path: 'see-reservations-client', component: SeeReservationsClientComponent},
+  {path: 'admin-home-page', component: AdminHomePageComponent},
+  {path: 'see-all-complains', component: SeeAllComplainsComponent},
+  {path: 'disable-account-request-page', component: DisableAccountRequestPageComponent},
 ];
 
 @NgModule({

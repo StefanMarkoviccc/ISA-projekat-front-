@@ -134,13 +134,16 @@ export class ApiService {
     return this.http.post(this.url + '/api/boatImages', data, this.generateHeader())
   }
   failAComplain(data: any) {
-    return this.http.post(this.url + '/api/complains/', data, this.generateHeader())
+    return this.http.post(this.url + '/api/complains', data, this.generateHeader())
   }
   searchByDate(data: any) {
     return this.http.post(this.url + '/api/houses/search', data,this.generateHeader())
   }
   getAppointmentsByUser(data: any) {
     return this.http.get(this.url + '/api/appointments/user/' + data.id, this.generateHeader())
+  }
+  getAllComplains(data: any){
+    return this.http.get(this.url + '/api/complains/', this.generateHeader())
   }
 
   generateHeader() : any {

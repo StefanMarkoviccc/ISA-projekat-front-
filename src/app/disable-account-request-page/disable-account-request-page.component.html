@@ -2,14 +2,11 @@
     <mat-card>
         <mat-card-content>
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
-                <h2>File a complaint</h2>
+                <h2>Disable account</h2>
                 <mat-form-field>
                     <input matInput placeholder="Text" formControlName="text" required>
                 </mat-form-field> 
-                <button mat-raised-button color="primary">File a complaint</button>
-                <div *ngIf="showMessage">
-                    <p>Nemate ni jednu rezervaciju za ovu kucu!</p>
-                </div>
+                <button mat-raised-button color="primary">Disable account</button>
             </form>
         </mat-card-content>
     </mat-card>
