@@ -13,13 +13,15 @@ export class ReservationListComponent implements OnInit {
   form: FormGroup
   appointments: any;
   id: any;
+  userId: any;
+  user: any;
 
 
   constructor(private formBuilder: FormBuilder, private api: ApiService, private activatedRoute: ActivatedRoute) 
   {
     
     this.form = this.formBuilder.group({
-      search: ['']
+
     });
 
     this.activatedRoute.queryParams.subscribe(params => {
@@ -27,6 +29,8 @@ export class ReservationListComponent implements OnInit {
     });
     
     this.appointments = [];
+
+   
   }
 
   ngOnInit(): void {
@@ -41,7 +45,6 @@ export class ReservationListComponent implements OnInit {
         id: parseInt(this.id),
       }).subscribe((response: any) => {
         this.appointments = response;
-
       });   
   }
 

@@ -59,7 +59,7 @@ export class ApiService {
     return this.http.get(this.url + '/api/users/' + data.id, this.generateHeader());
   }
   getClients(data: any){
-    return this.http.get(this.url + '/api/users/clients/',  this.generateHeader());
+    return this.http.get(this.url + '/api/users/clients', data);
   }
   getHouse(data: any){
     return this.http.get(this.url + '/api/houses/' + data.id, this.generateHeader());
