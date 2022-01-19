@@ -145,7 +145,9 @@ export class ApiService {
   getAppointmentsByUser(data: any) {
     return this.http.get(this.url + '/api/appointments/user/' + data.id, this.generateHeader())
   }
-
+  isAppointmentFinished(data: any){
+    return this.http.get(this.url + '/api/appointments/appointment/' + data.id, this.generateHeader())
+  }
   getAppointmentsByHouse(data: any) {
     return this.http.get(this.url + '/api/appointments/house/' + data.id, this.generateHeader())
   }
@@ -165,6 +167,9 @@ export class ApiService {
   }
   getIsHouseTaken(data: any){
     return this.http.get(this.url + '/api/api/houses/house/' + data.id, this.generateHeader());
+  }
+  createAppointmentReport(data: any){
+    return this.http.post(this.url + '/api/appointmentReports', data, this.generateHeader() )
   }
 }
 

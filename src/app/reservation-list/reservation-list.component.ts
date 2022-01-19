@@ -15,6 +15,9 @@ export class ReservationListComponent implements OnInit {
   id: any;
   userId: any;
   user: any;
+  isFinished: any;
+  appontmentId: any;
+  appointement: any;
 
 
   constructor(private formBuilder: FormBuilder, private api: ApiService, private activatedRoute: ActivatedRoute) 
@@ -30,7 +33,7 @@ export class ReservationListComponent implements OnInit {
     
     this.appointments = [];
 
-   
+   this.isFinished=false;
   }
 
   ngOnInit(): void {

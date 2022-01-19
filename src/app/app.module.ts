@@ -63,6 +63,7 @@ import { ActionBoatComponent } from './action-boat/action-boat.component';
 import { MakeHouseReservationClientComponent } from './make-house-reservation-client/make-house-reservation-client.component';
 import { SeeReservationsClientComponent } from './see-reservations-client/see-reservations-client.component';
 import { ClientInfoComponent } from './client-info/client-info.component';
+import { ReportForFinishedAppointmentComponent } from './report-for-finished-appointment/report-for-finished-appointment.component';
 
 
 @NgModule({
@@ -116,6 +117,7 @@ import { ClientInfoComponent } from './client-info/client-info.component';
     MakeHouseReservationClientComponent,
     SeeReservationsClientComponent,
     ClientInfoComponent,
+    ReportForFinishedAppointmentComponent,
 
   ],
   imports: [
