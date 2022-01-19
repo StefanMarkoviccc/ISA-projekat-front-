@@ -20,6 +20,7 @@ export class CreateAppointmentComponent implements OnInit {
   dateTo: any;
   clientId: any;
   selectedUser: any;
+  showMessage: any;
 
   constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router,private activatedRoute: ActivatedRoute) {
     this.form = this.formBuilder.group({
@@ -38,13 +39,11 @@ export class CreateAppointmentComponent implements OnInit {
       console.log(this.id)
     });
 
+    this.showMessage = false;
 
     this.rooms = [];
 
     this.users= [];
-
-    this.clientId=1;
-
    }
 
   ngOnInit(): void {
@@ -86,10 +85,11 @@ export class CreateAppointmentComponent implements OnInit {
       additionalServices: this.form.get('additionalServices')?.value,
     }).subscribe((response: any) => {
       this.router.navigate(['/house-owner-home-page']);
-    })
+    }, (error: any) => {
+      this.showMessage = true;
+    });
 
-    //EMAIL SERVICE
-    //CHECK BOX
+      
     //DODATNE USLUGE
   }
 

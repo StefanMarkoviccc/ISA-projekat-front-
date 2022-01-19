@@ -33,7 +33,9 @@
                 <mat-form-field>
                     <input matInput placeholder="Additional services" formControlName="additionalServices" required>
                 </mat-form-field> 
-
+                <div *ngIf="showMessage">
+                    <p>Termin je zauzet!</p>
+                  </div>
                 
 
                 <button mat-raised-button color="primary">Create</button>

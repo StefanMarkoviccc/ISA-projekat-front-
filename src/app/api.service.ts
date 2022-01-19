@@ -77,7 +77,7 @@ export class ApiService {
     return this.http.get(this.url + '/api/boatAvailabilityPeriods/' + data.id, this.generateHeader());
   }
   getActionForHouse(data: any){
-    return this.http.get(this.url + '/api/actionHouses/' + data.id, this.generateHeader());
+    return this.http.get(this.url + '/api/appointments/actions/' + data.id, this.generateHeader());
   }
   getActionForBoat(data: any){
     return this.http.get(this.url + '/api/actionBoats/' + data.id, this.generateHeader());
