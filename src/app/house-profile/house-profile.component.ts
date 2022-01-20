@@ -27,6 +27,7 @@ import {
   CalendarEventTimesChangedEvent,
   CalendarView,
 } from 'angular-calendar';
+import { th } from 'date-fns/locale';
 
 const colors: any = {
   red: {
@@ -93,7 +94,9 @@ export class HouseProfileComponent implements OnInit {
 
     this.getImages();
 
+    this.rooms = [];
    
+    this.showMessage = false;
 
   }
 
@@ -190,13 +193,21 @@ export class HouseProfileComponent implements OnInit {
   id: any;
   user: any;
   images: any;
+  rooms: any;
+  room: any;
 
+  appointments: any;
 
-
-
+  showMessage: any;
   
   ngOnInit(): void {
     this.getHouses();
+
+    this.api.getRoomsForHouse({
+      id:  parseInt(this.id)
+    }).subscribe((response: any) => {
+      this.rooms = response;
+    })
   }
 
   getImages() {
@@ -222,6 +233,7 @@ export class HouseProfileComponent implements OnInit {
 
       this.getAvailabilityPeriods();
       this.getActionsHouse();
+      this.getAppointments();
  
         })
 
@@ -248,6 +260,25 @@ export class HouseProfileComponent implements OnInit {
 
     })
 
+  }
+
+  getAppointments() {
+
+    this.api.getAppointmentsByHouse({id: this.id}).subscribe((response: any) => {
+      this.appointments = response;
+
+      for(let event of this.appointments) {
+        console.log(event)  
+        this.events.push({
+            start: new Date(event.dateFrom),
+            end: new Date(event.dateTo),
+            title: this.houses ? this.houses[0].name : 'House',
+            color: colors.red,
+            actions: this.actions,
+            allDay: true,
+          });
+      }
+    })
   }
 
   getActionsHouse() {
@@ -279,7 +310,9 @@ export class HouseProfileComponent implements OnInit {
      id: this.id,
     }).subscribe((response: any) => {
       this.router.navigate(['/houseView']);
-    })
+    }, (error: any) => {
+      this.showMessage = true;
+    });
   }
 
   handleFileInput(event: any | null, houseId: any) {

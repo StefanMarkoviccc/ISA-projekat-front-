@@ -10,6 +10,10 @@
                     <p>Rules of conduct: {{house.rulesOfConduct}}
                     <p>Average grade: {{house.average}}</p>
                     <p>Price for one night: 50e</p>
+                    <h1>Rooms:</h1>
+                    <div class="room" *ngFor="let room of rooms">
+                      <p class="title">Room number: {{room.roomNumber}}, Number of beds: {{room.numberOfBeds}}</p>
+                    </div>
                     <div>
                         <img *ngFor="let image of images"  [src]="image">
                     </div>
@@ -26,6 +30,9 @@
                             <input type="file"
                                    id="file"
                                    (change)="handleFileInput($event, house.id)">
+                        </div>
+                        <div *ngIf="showMessage">
+                          <h2 style="color:red;">You cannot delete a house if there are appointments!</h2>
                         </div>
                         <form [formGroup]="form" (ngSubmit)="onSubmit()">
                             <button mat-raised-button color="primary">Delete</button>

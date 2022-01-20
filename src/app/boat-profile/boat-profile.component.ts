@@ -92,6 +92,8 @@ export class BoatProfileComponent implements OnInit {
     });
 
     this.getImages();
+
+    this.showMessage = false;
   }
 
   actions: CalendarEventAction[] = [
@@ -181,6 +183,7 @@ export class BoatProfileComponent implements OnInit {
   boats: any;
   boatAvaliabilityPeriods: any;
   actionsBoat: any;
+  appointments: any;
 
   base64textString: any;
   selectedBoatId: any;
@@ -188,6 +191,7 @@ export class BoatProfileComponent implements OnInit {
   user: any;
   images: any;
   boat: any;
+  showMessage: any;
 
   
 
@@ -242,6 +246,28 @@ export class BoatProfileComponent implements OnInit {
 
   }
 
+  getAppointments() {
+      
+    this.api.getAppointmentFroBoat({id: this.id}).subscribe((response: any) => {
+      this.appointments = response;
+      
+      for(let event of this.appointments) {
+        console.log(event)  
+        this.events.push({
+            start: new Date(event.dateFrom),
+            end: new Date(event.dateTo),
+            title: this.boats ? this.boats[0].name : 'Boat',
+            color: colors.red,
+            actions: this.actions,
+            allDay: true,
+          });
+      }
+
+
+    })
+
+  }
+
   getActions() {
 
     this.api.getActionForBoat({id: this.id}).subscribe((response: any) => {
@@ -269,7 +295,9 @@ export class BoatProfileComponent implements OnInit {
      id: this.id,
     }).subscribe((response: any) => {
       this.router.navigate(['/boatView']);
-    })
+    }, (error: any) => {
+      this.showMessage = true;
+    });
   }
 
   handleFileInput(event: any | null, boatId: any) {
