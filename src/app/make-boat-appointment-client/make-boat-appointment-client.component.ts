@@ -15,6 +15,7 @@ export class MakeBoatAppointmentClientComponent implements OnInit {
   isAction: any;
   id: any;
   userId: any;
+  showMessage: any;
 
   constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router,private activatedRoute: ActivatedRoute) {
     this.form = this.formBuilder.group({
@@ -28,6 +29,8 @@ export class MakeBoatAppointmentClientComponent implements OnInit {
       this.id = params['id'];
       console.log(this.id)
     });
+
+    this.showMessage=false;
 
    }
 
@@ -55,6 +58,8 @@ export class MakeBoatAppointmentClientComponent implements OnInit {
       }).subscribe((response: any) => {
         this.router.navigate(['/boat-owner-home-page']);
       })
+    }, (error: any) => {
+      this.showMessage = true;
     });
 
   }

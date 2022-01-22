@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators,FormControl, FormArray} from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 
@@ -24,7 +24,8 @@ export class EditProfileComponent implements OnInit {
       country: ['', Validators.required],
       phoneNumber: ['', Validators.required],
       userType: ['', Validators.required],
-      description: ['', Validators.required]
+      description: ['', Validators.required],
+      onActions: ['', Validators.required]
     });
 
     let jsonUser = localStorage.getItem('user');
@@ -50,11 +51,12 @@ export class EditProfileComponent implements OnInit {
       country: [response.country, Validators.required],
       phoneNumber: [response.phoneNumber, Validators.required],
       userType: [response.userType, Validators.required],
-      description: [response.description, Validators.required]
+      description: [response.description, Validators.required],
     });
   });  
   
    }
+
 
   ngOnInit(): void {
   }

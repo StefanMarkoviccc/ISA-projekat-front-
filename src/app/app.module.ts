@@ -62,16 +62,10 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { ActionBoatComponent } from './action-boat/action-boat.component';
 import { MakeHouseReservationClientComponent } from './make-house-reservation-client/make-house-reservation-client.component';
 import { SeeReservationsClientComponent } from './see-reservations-client/see-reservations-client.component';
-<<<<<<< HEAD
 import { AdminHomePageComponent } from './admin-home-page/admin-home-page.component';
 import { SeeAllComplainsComponent } from './see-all-complains/see-all-complains.component';
 import { DisableAccountRequestPageComponent } from './disable-account-request-page/disable-account-request-page.component';
 import { MakeBoatAppointmentClientComponent } from './make-boat-appointment-client/make-boat-appointment-client.component';
-=======
-import { ClientInfoComponent } from './client-info/client-info.component';
-import { ReportForFinishedAppointmentComponent } from './report-for-finished-appointment/report-for-finished-appointment.component';
->>>>>>> 1cd233a7c4368b5b138836c661eb98d8f54915c9
-
 
 @NgModule({
   declarations: [
@@ -123,16 +117,10 @@ import { ReportForFinishedAppointmentComponent } from './report-for-finished-app
     ActionBoatComponent,
     MakeHouseReservationClientComponent,
     SeeReservationsClientComponent,
-<<<<<<< HEAD
     AdminHomePageComponent,
     SeeAllComplainsComponent,
     DisableAccountRequestPageComponent,
     MakeBoatAppointmentClientComponent,
-=======
-    ClientInfoComponent,
-    ReportForFinishedAppointmentComponent,
->>>>>>> 1cd233a7c4368b5b138836c661eb98d8f54915c9
-
   ],
   imports: [
     BrowserModule,
