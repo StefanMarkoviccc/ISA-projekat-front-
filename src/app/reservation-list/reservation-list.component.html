@@ -1,1 +1,16 @@
-<p>reservation-list works!</p>
+<div class="page">
+    <mat-card>
+        <mat-card-content>
+            <div class="appointment" *ngFor="let appointment of appointments">
+                <p>{{appointment.house.name}}</p>
+                <p>{{appointment.date}}</p>
+                <p>{{appointment.duration}}</p>
+                <li><a routerLink="/client-info" [queryParams]="{id: appointment.clientId}" routerLinkActive="active">Client</a></li>        
+                <div *ngIf="">
+                    <li><a routerLink="/report-for-finished-appointment" [queryParams]="{id: appointment.clientId}" routerLinkActive="active">Client</a></li>        
+                </div>
+           
+         </div>
+        </mat-card-content>
+    </mat-card>
+</div>

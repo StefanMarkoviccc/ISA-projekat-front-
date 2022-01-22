@@ -58,6 +58,9 @@ export class ApiService {
   getUser(data: any){
     return this.http.get(this.url + '/api/users/' + data.id, this.generateHeader());
   }
+  getClients(data: any){
+    return this.http.get(this.url + '/api/users/clients', this.generateHeader());
+  }
   getHouse(data: any){
     return this.http.get(this.url + '/api/houses/' + data.id, this.generateHeader());
   }
@@ -74,7 +77,7 @@ export class ApiService {
     return this.http.get(this.url + '/api/boatAvailabilityPeriods/' + data.id, this.generateHeader());
   }
   getActionForHouse(data: any){
-    return this.http.get(this.url + '/api/actionHouses/' + data.id, this.generateHeader());
+    return this.http.get(this.url + '/api/appointments/actions/' + data.id, this.generateHeader());
   }
   getActionForBoat(data: any){
     return this.http.get(this.url + '/api/actionBoats/' + data.id, this.generateHeader());
@@ -142,11 +145,19 @@ export class ApiService {
   getAppointmentsByUser(data: any) {
     return this.http.get(this.url + '/api/appointments/user/' + data.id, this.generateHeader())
   }
+
   getAllComplains(data: any){
     return this.http.get(this.url + '/api/complains/', this.generateHeader())
   }
   sendRequestToDisableAcc(data: any){
     return this.http.get(this.url + 'api/accRequests', this.generateHeader())
+  }
+
+  isAppointmentFinished(data: any){
+    return this.http.get(this.url + '/api/appointments/appointment/' + data.id, this.generateHeader())
+  }
+  getAppointmentsByHouse(data: any) {
+    return this.http.get(this.url + '/api/appointments/house/' + data.id, this.generateHeader())
   }
 
   generateHeader() : any {
@@ -165,6 +176,9 @@ export class ApiService {
   }
   getIsHouseTaken(data: any){
     return this.http.get(this.url + '/api/api/houses/house/' + data.id, this.generateHeader());
+  }
+  createAppointmentReport(data: any){
+    return this.http.post(this.url + '/api/appointmentReports', data, this.generateHeader() )
   }
 }
 

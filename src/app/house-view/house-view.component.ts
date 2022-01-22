@@ -15,6 +15,7 @@ export class HouseViewComponent implements OnInit {
   houses: any;
   startDate: any;
   endDate: any;
+  user: any;
 
   constructor(private formBuilder: FormBuilder, private api: ApiService, private activatedRoute: ActivatedRoute) 
   {
@@ -22,7 +23,11 @@ export class HouseViewComponent implements OnInit {
     this.form = this.formBuilder.group({
       search: ['']
     });
+    let jsonUser = localStorage.getItem('user');
 
+    if(jsonUser) {
+      this.user = JSON.parse(jsonUser);
+    }
   
 
   this.activatedRoute.queryParams.subscribe(params => {

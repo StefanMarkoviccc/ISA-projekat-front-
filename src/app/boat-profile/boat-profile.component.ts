@@ -44,8 +44,8 @@ const colors: any = {
 };
 
 @Component({
-  selector: 'app-boat-view',
-  templateUrl: './boat-profile.component.html',
+  selector: 'app-boat-profile',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [
     `
       h3 {
@@ -58,6 +58,7 @@ const colors: any = {
       }
     `,
   ],
+  templateUrl: './boat-profile.component.html',
   styleUrls: ['./boat-profile.component.scss']
 })
 export class BoatProfileComponent implements OnInit {

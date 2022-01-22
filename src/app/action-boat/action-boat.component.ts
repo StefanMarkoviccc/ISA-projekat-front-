@@ -14,13 +14,15 @@ export class ActionBoatComponent implements OnInit {
   form: FormGroup;
   boatId: any;
   id: any;
+  isAction: any;
 
   constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.form = this.formBuilder.group({
       additionalServices: ['', Validators.required],
-      dateTo: ['', Validators.required],
-      dateFrom: ['', Validators.required],
+      date: ['', Validators.required],
       price: ['', Validators.required],
+      duration:  ['', Validators.required],
+      maxPersons: ['', Validators.required],
 
     });
 
@@ -29,6 +31,8 @@ export class ActionBoatComponent implements OnInit {
       this.id = params['id'];
       console.log(this.id)
     });
+
+    this.isAction = true;
    }
 
   ngOnInit(): void {
@@ -40,9 +44,11 @@ export class ActionBoatComponent implements OnInit {
 
     this.api.createActionBoat({
       boatId: parseInt(this.id),
-      dateTo: this.form.get('dateTo')?.value,
-      dateFrom: this.form.get('dateFrom')?.value,
+      date: this.form.get('date')?.value,
+      duration: this.form.get('duration')?.value,
+      maxPersons: this.form.get('maxPersons')?.value,
       price: this.form.get('price')?.value,
+      action: this.isAction,
       additionalServices: this.form.get('additionalServices')?.value
     }).subscribe((response: any) => {
       this.router.navigate(['/boatView']);

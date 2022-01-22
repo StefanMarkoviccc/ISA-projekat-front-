@@ -17,6 +17,7 @@ export class ActionHouseComponent implements OnInit {
   selectedRoom: any;
   id: any;
   isAction: any;
+  clientId: any;
 
   constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.form = this.formBuilder.group({

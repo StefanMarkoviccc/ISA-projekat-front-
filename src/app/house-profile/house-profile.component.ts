@@ -208,7 +208,6 @@ export class HouseProfileComponent implements OnInit {
         this.images.push(image.content)
       }
 
-      console.log(this.images);
 
     });
 
@@ -222,7 +221,8 @@ export class HouseProfileComponent implements OnInit {
       this.houses = [response];
 
       this.getAvailabilityPeriods();
-      //this.getActionsHouse();
+      this.getActionsHouse();
+ 
         })
 
     
@@ -255,13 +255,15 @@ export class HouseProfileComponent implements OnInit {
     this.api.getActionForHouse({id: this.id}).subscribe((response: any) => {
       this.actionsHouse = response;
 
+      console.log(response);
+
       for(let event of this.actionsHouse){
         console.log(event)  
         this.events.push({
             start: new Date(event.dateFrom),
             end: new Date(event.dateTo),
             title: this.houses ? this.houses[0].name : 'House',
-            color: colors.blue,
+            color: colors.yellow,
             actions: this.actionsHouse,
             allDay: true,
           });
