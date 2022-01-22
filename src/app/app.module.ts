@@ -69,6 +69,8 @@ import { MakeBoatAppointmentClientComponent } from './make-boat-appointment-clie
 import { CancelAppointmentHouseComponent } from './cancel-appointment-house/cancel-appointment-house.component';
 import { SeeActionsForHouseClientComponent } from './see-actions-for-house-client/see-actions-for-house-client.component';
 import { ReservActionClientComponent } from './reserv-action-client/reserv-action-client.component';
+import { SeeActionForBoatClientComponent } from './see-action-for-boat-client/see-action-for-boat-client.component';
+import { ReservActionForBoatComponent } from './reserv-action-for-boat/reserv-action-for-boat.component';
 
 @NgModule({
   declarations: [
@@ -127,6 +129,8 @@ import { ReservActionClientComponent } from './reserv-action-client/reserv-actio
     CancelAppointmentHouseComponent,
     SeeActionsForHouseClientComponent,
     ReservActionClientComponent,
+    SeeActionForBoatClientComponent,
+    ReservActionForBoatComponent,
   ],
   imports: [
     BrowserModule,

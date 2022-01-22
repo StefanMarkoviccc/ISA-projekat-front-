@@ -61,6 +61,9 @@ export class ApiService {
   reservAction(data: any){
     return this.http.put(this.url + '/api/appointments/action/' + data.id, data,this.generateHeader());
   }
+  reservActionBoat(data: any){
+    return this.http.put(this.url + '/api/boatAppointments/action/' + data.id, data,this.generateHeader());
+  }
   getUser(data: any){
     return this.http.get(this.url + '/api/users/' + data.id, this.generateHeader());
   }
@@ -86,10 +89,13 @@ export class ApiService {
     return this.http.get(this.url + '/api/appointments/actions/' + data.id, this.generateHeader());
   }
   getActionForBoat(data: any){
-    return this.http.get(this.url + '/api/actionBoats/' + data.id, this.generateHeader());
+    return this.http.get(this.url + '/api/boatAppointments/actions/' + data.id, this.generateHeader());
   }
   getAppointment(data: any){
     return this.http.get(this.url + '/api/appointments/' +data.id, this.generateHeader());
+  }
+  getBoatAppointment(data: any){
+    return this.http.get(this.url + '/api/boatAppointments/' +data.id, this.generateHeader());
   }
   createBoat(data: any){
     return this.http.post(this.url + '/api/boats', data, this.generateHeader());

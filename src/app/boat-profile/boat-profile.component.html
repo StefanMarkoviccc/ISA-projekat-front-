@@ -27,7 +27,8 @@
                     </div>
                         <div *ngIf="user.userType=='CLIENT'">
                             <li><a routerLink="/complain-page" [queryParams]="{id: boat.id, type: 3}" routerLinkActive="active">File a complaint</a></li>
-                        </div>
+                            <li><a routerLink="/see-actions-for-house-client" [queryParams]="{id: boat.id}" routerLinkActive="active">See actions</a></li>
+                          </div>
                         <form [formGroup]="form" (ngSubmit)="onSubmit()">
                             <button mat-raised-button color="primary">Delete</button>
                         </form>
