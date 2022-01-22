@@ -35,6 +35,7 @@
 
                     <div *ngIf="user.userType=='CLIENT'">
                         <li><a routerLink="/complain-page" [queryParams]="{houseId: house.id, type: 0}" routerLinkActive="active">File a complaint</a></li>
+                        <li><a routerLink="/see-actions-for-house-client" [queryParams]="{id: house.id}" routerLinkActive="active">See actions</a></li>
                         <div class="form-group">
                             <label for="file">Choose File</label>
                             <input type="file"

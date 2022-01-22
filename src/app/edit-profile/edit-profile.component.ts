@@ -25,7 +25,7 @@ export class EditProfileComponent implements OnInit {
       phoneNumber: ['', Validators.required],
       userType: ['', Validators.required],
       description: ['', Validators.required],
-      onActions: ['', Validators.required]
+      onAction: ['']
     });
 
     let jsonUser = localStorage.getItem('user');
@@ -73,6 +73,7 @@ export class EditProfileComponent implements OnInit {
       phoneNumber: this.form.get('phoneNumber')?.value,
       userType: this.form.get('userType')?.value,
       description: this.form.get('description')?.value,
+      onAction : this.form.get('onAction')?.value,
     }).subscribe((response: any) => {
       this.router.navigate(['/client-home-page']);
     })

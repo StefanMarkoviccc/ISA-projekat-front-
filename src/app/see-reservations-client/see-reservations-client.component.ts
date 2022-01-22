@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 
 
@@ -14,9 +14,10 @@ export class SeeReservationsClientComponent implements OnInit {
   form: FormGroup
   appointments: any;
   userId : any;
+  appointmetId: any;
 
 
-  constructor(private formBuilder: FormBuilder, private api: ApiService, private activatedRoute: ActivatedRoute) 
+  constructor(private formBuilder: FormBuilder, private api: ApiService, private activatedRoute: ActivatedRoute, private router: Router) 
   {
     
     this.form = this.formBuilder.group({
@@ -54,7 +55,6 @@ export class SeeReservationsClientComponent implements OnInit {
   }
 
   onSubmit() {
-    this.getAppointmentsByUser();
   }
 
 }

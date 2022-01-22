@@ -2,9 +2,11 @@
     <mat-card>
         <mat-card-content>
             <div class="appointment" *ngFor="let appointment of appointments">
-                <h1 class="title">{{appointment.house.name}}</h1>
-                <h1 class="title">{{appointment.date}}</h1>
-                <h1 class="title">{{appointment.duration}}</h1> 
+                <h2>RESERVATION</h2>
+                <h1 class="title">House: {{appointment.house.name}}</h1>
+                <h1 class="title">Date: {{appointment.date}}</h1>
+                <h1 class="title">Duration: {{appointment.duration}}</h1> 
+                <li><a routerLink="/cancel-appointment-house" [queryParams]="{id: appointment.id}" routerLinkActive="active">Cancel</a></li>
              </div>
         </mat-card-content>
     </mat-card>

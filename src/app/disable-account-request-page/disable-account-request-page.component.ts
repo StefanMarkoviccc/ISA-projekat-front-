@@ -17,7 +17,7 @@ export class DisableAccountRequestPageComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,  private api: ApiService, private activatedRoute: ActivatedRoute,private router: Router) {
 
     this.form = this.formBuilder.group({
-      text : [" ", Validators.required]
+      text : [' ', Validators.required]
     })
 
     this.activatedRoute.queryParams.subscribe(params => {
@@ -32,8 +32,18 @@ export class DisableAccountRequestPageComponent implements OnInit {
   }
 
   onSubmit(){
+
+    let userString = localStorage.getItem('user');
+    let user;
+
+    if(userString) {
+      user = JSON.parse(userString);
+    }
+
+    console.log(this.form.get('text')?.value);
+
     this.api.sendRequestToDisableAcc({
-      userId: parseInt(this.userId),
+      userId: user ? user.id : -1,
       text: this.form.get('text')?.value,
     }).subscribe((response: any) => {
       this.router.navigate(['/client-home-page'])
