@@ -8,7 +8,8 @@
                 <div class="boat" *ngFor="let boat of boats">
                     <h1 class="title">{{boat.name}}</h1>
                     <li><a routerLink="/boat-profile" [queryParams]="{id: boat.id, type: 3}" routerLinkActive="active">See boat</a></li>        
-            </div>
+                    <li><a routerLink="/make-boat-appointment-client" [queryParams]="{id: boat.id}" routerLinkActive="active">Reservation</a></li>        
+                </div>
         </mat-card-content>
     </mat-card>
 </div>

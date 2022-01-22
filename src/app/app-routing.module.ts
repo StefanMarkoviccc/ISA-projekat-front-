@@ -42,8 +42,14 @@ import { ComplainPageComponent } from './complain-page/complain-page.component';
 import { ActionBoatComponent } from './action-boat/action-boat.component';
 import { MakeHouseReservationClientComponent } from './make-house-reservation-client/make-house-reservation-client.component';
 import { SeeReservationsClientComponent } from './see-reservations-client/see-reservations-client.component';
-import { ClientInfoComponent } from './client-info/client-info.component';
-import { ReportForFinishedAppointmentComponent } from './report-for-finished-appointment/report-for-finished-appointment.component';
+
+import { AdminHomePageComponent } from './admin-home-page/admin-home-page.component';
+import { SeeAllComplainsComponent } from './see-all-complains/see-all-complains.component';
+import { DisableAccountRequestPageComponent } from './disable-account-request-page/disable-account-request-page.component';
+import { MakeBoatAppointmentClientComponent } from './make-boat-appointment-client/make-boat-appointment-client.component';
+import { CancelAppointmentHouseComponent } from './cancel-appointment-house/cancel-appointment-house.component';
+import { SeeActionsForHouseClientComponent } from './see-actions-for-house-client/see-actions-for-house-client.component';
+import { ReservActionClientComponent } from './reserv-action-client/reserv-action-client.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -87,10 +93,16 @@ const routes: Routes = [
   {path: 'client-reservation-page', component: ClientReservationPageComponent},
   {path: 'action-boat', component: ActionBoatComponent},
   {path: 'make-house-reservation-client', component: MakeHouseReservationClientComponent},
+  {path: 'see-reservations-client', component: SeeReservationsClientComponent},
+  {path: 'admin-home-page', component: AdminHomePageComponent},
+  {path: 'see-all-complains', component: SeeAllComplainsComponent},
+  {path: 'disable-account-request-page', component: DisableAccountRequestPageComponent},
+  {path: 'make-boat-appointment-client', component: MakeBoatAppointmentClientComponent},
   {path: 'see-reservations-client', component: SeeReservationsClientComponent},  
   {path: 'reservation-list', component:ReservationListComponent},
-  {path: 'client-info', component:ClientInfoComponent},
-  {path: 'report-for-finished-appointment', component: ReportForFinishedAppointmentComponent},
+  {path: 'cancel-appointment-house', component: CancelAppointmentHouseComponent},
+  {path: 'see-actions-for-house-client', component: SeeActionsForHouseClientComponent},
+  {path: 'reserv-action-client', component: ReservActionClientComponent},
 ];
 
 @NgModule({

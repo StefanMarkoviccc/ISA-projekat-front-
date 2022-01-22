@@ -1,0 +1,11 @@
+<div class="page">
+    <mat-card>
+        <mat-card-content>
+            <div class="appointment" *ngFor="let appointment of appointments">
+                <h2>Action</h2>
+                <h1>Datum: {{appointment.date}}</h1>
+                <li><a routerLink="/reserv-action-client" [queryParams]="{id: appointment.id}" routerLinkActive="active">RESERVE</a></li>
+             </div>
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -7,6 +7,9 @@
                     <input matInput placeholder="Text" formControlName="text" required>
                 </mat-form-field> 
                 <button mat-raised-button color="primary">File a complaint</button>
+                <div *ngIf="showMessage">
+                    <p>Nemate ni jednu rezervaciju za ovu kucu!</p>
+                </div>
             </form>
         </mat-card-content>
     </mat-card>

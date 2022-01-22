@@ -1,23 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
 
-
 @Component({
-  selector: 'app-see-reservations-client',
-  templateUrl: './see-reservations-client.component.html',
-  styleUrls: ['./see-reservations-client.component.scss']
+  selector: 'app-see-all-complains',
+  templateUrl: './see-all-complains.component.html',
+  styleUrls: ['./see-all-complains.component.scss']
 })
-export class SeeReservationsClientComponent implements OnInit {
+export class SeeAllComplainsComponent implements OnInit {
 
   form: FormGroup
-  appointments: any;
+  complains: any;
   userId : any;
-  appointmetId: any;
 
 
-  constructor(private formBuilder: FormBuilder, private api: ApiService, private activatedRoute: ActivatedRoute, private router: Router) 
+  constructor(private formBuilder: FormBuilder, private api: ApiService, private activatedRoute: ActivatedRoute) 
   {
     
     this.form = this.formBuilder.group({
@@ -28,12 +26,12 @@ export class SeeReservationsClientComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getAppointmentsByUser();
+    this.getAllComplains();
     
   }
 
 
-  getAppointmentsByUser() {
+  getAllComplains() {
 
     this.api.getCurrentUser().subscribe((response: any) => {
       localStorage.setItem('user', JSON.stringify(response));
@@ -43,10 +41,10 @@ export class SeeReservationsClientComponent implements OnInit {
 
 
  
-      this.api.getAppointmentsByUser({
+      this.api.getAllComplains({
         id: parseInt(this.userId),
       }).subscribe((response: any) => {
-        this.appointments = response;
+        this.complains = response;
       })
       console.log(this.userId);
     });
@@ -55,6 +53,6 @@ export class SeeReservationsClientComponent implements OnInit {
   }
 
   onSubmit() {
+    this.getAllComplains();
   }
-
 }

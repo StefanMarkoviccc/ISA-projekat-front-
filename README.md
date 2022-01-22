@@ -25,3 +25,13 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+Login za usere:
+CLIENT Stefan@gmail.com sifra: 123
+HOUSE OWNER Bojana@gmail.com sifra: 123
+FISHING INSTRUCTOR Viki@gmail.com sifra: 123
+BOAT OWNER: Jovana@gmail.com sifra 123
+
+back se pokrece pomocu Execute Maven Goal => mvn spring-boot:run
+front => ng serve
+skripta se nalazi u fajlovima na backend repository

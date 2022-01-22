@@ -1,0 +1,10 @@
+<div class="page">
+    <mat-card>
+        <mat-card-content>
+            <div class="complain" *ngFor="let complain of complains">
+                <h1 class="title">{{complain.text}}</h1>
+                <h1 class="title">{{complain.complainType}}</h1>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

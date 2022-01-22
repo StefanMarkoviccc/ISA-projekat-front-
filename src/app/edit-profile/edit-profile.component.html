@@ -27,6 +27,11 @@
                 <mat-form-field>
                     <input matInput placeholder="Description" formControlName="description" required>
                 </mat-form-field> 
+                <div *ngIf="user.userType=='CLIENT'">
+                    <section class="example-section">
+                        <mat-checkbox class="example-margin" formControlName="onAction">Subcribe on action</mat-checkbox>
+                    </section>
+                </div>
                 <button mat-raised-button color="primary">Edit</button>
             </form>
         </mat-card-content>

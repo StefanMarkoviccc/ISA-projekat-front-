@@ -27,11 +27,15 @@
                     </div>
                         <div *ngIf="user.userType=='CLIENT'">
                             <li><a routerLink="/complain-page" [queryParams]="{id: boat.id, type: 3}" routerLinkActive="active">File a complaint</a></li>
+
                         </div>
 
                         <div *ngIf="showMessage">
                           <h2 style="color:red;">You cannot delete a boat if there are appointments!</h2>
                         </div>
+                        <div>
+                            <li><a routerLink="/see-actions-for-house-client" [queryParams]="{id: boat.id}" routerLinkActive="active">See actions</a></li>
+                          </div>
                         <form [formGroup]="form" (ngSubmit)="onSubmit()">
                             <button mat-raised-button color="primary">Delete</button>
                         </form>

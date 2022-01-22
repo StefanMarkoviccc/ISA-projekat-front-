@@ -46,6 +46,9 @@ export class ApiService {
   deleteBoat(data: any){
     return this.http.delete(this.url + '/api/boats/' + data.id, this.generateHeader());
   }
+  deleteAppointmentHouse(data: any){
+    return this.http.delete(this.url + '/api/appointments/' + data.id, this.generateHeader());
+  }
   editHouse(data: any){
     return this.http.put(this.url + '/api/houses/' + data.id, data, this.generateHeader());
   }
@@ -54,6 +57,12 @@ export class ApiService {
   }
   changePassword(data: any){
     return this.http.put(this.url + '/api/users/change-password', data, this.generateHeader());
+  }
+  reservAction(data: any){
+    return this.http.put(this.url + '/api/appointments/action/' + data.id, data,this.generateHeader());
+  }
+  reservActionBoat(data: any){
+    return this.http.put(this.url + '/api/boatAppointments/action/' + data.id, data,this.generateHeader());
   }
   getUser(data: any){
     return this.http.get(this.url + '/api/users/' + data.id, this.generateHeader());
@@ -83,7 +92,13 @@ export class ApiService {
     return this.http.get(this.url + '/api/boatAppointments/boat/' + data.id, this.generateHeader());
   }
   getActionForBoat(data: any){
-    return this.http.get(this.url + '/api/actionBoats/' + data.id, this.generateHeader());
+    return this.http.get(this.url + '/api/boatAppointments/actions/' + data.id, this.generateHeader());
+  }
+  getAppointment(data: any){
+    return this.http.get(this.url + '/api/appointments/' +data.id, this.generateHeader());
+  }
+  getBoatAppointment(data: any){
+    return this.http.get(this.url + '/api/boatAppointments/' +data.id, this.generateHeader());
   }
   createBoat(data: any){
     return this.http.post(this.url + '/api/boats', data, this.generateHeader());
@@ -140,7 +155,7 @@ export class ApiService {
     return this.http.post(this.url + '/api/boatImages', data, this.generateHeader())
   }
   failAComplain(data: any) {
-    return this.http.post(this.url + '/api/complains/', data, this.generateHeader())
+    return this.http.post(this.url + '/api/complains', data, this.generateHeader())
   }
   searchByDate(data: any) {
     return this.http.post(this.url + '/api/houses/search', data,this.generateHeader())
@@ -148,12 +163,24 @@ export class ApiService {
   getAppointmentsByUser(data: any) {
     return this.http.get(this.url + '/api/appointments/user/' + data.id, this.generateHeader())
   }
+  getActions(data: any){
+    return this.http.get(this.url + '/api/appointments/actions', this.generateHeader());
+  }
+
+  getAllComplains(data: any){
+    return this.http.get(this.url + '/api/complains/', this.generateHeader())
+  }
+  sendRequestToDisableAcc(data: any){
+    return this.http.post(this.url + '/api/accRequests', data, this.generateHeader())
+  }
+
   isAppointmentFinished(data: any){
     return this.http.get(this.url + '/api/appointments/appointment/' + data.id, this.generateHeader())
   }
   getAppointmentsByHouse(data: any) {
     return this.http.get(this.url + '/api/appointments/house/' + data.id, this.generateHeader())
   }
+
   generateHeader() : any {
 
     const headers = {

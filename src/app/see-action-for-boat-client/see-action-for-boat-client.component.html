@@ -1,0 +1,11 @@
+<div class="page">
+    <mat-card>
+        <mat-card-content>
+            <div class="boatAppointment" *ngFor="let boatAppointment of boatAppointments">
+                <h2>Action</h2>
+                <h1>Datum: {{boatAppointment.date}}</h1>
+                <li><a routerLink="/reserv-action-for-boat" [queryParams]="{id: boatAppointment.id}" routerLinkActive="active">RESERVE</a></li>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
