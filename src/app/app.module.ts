@@ -65,6 +65,7 @@ import { SeeReservationsClientComponent } from './see-reservations-client/see-re
 import { AdminHomePageComponent } from './admin-home-page/admin-home-page.component';
 import { SeeAllComplainsComponent } from './see-all-complains/see-all-complains.component';
 import { DisableAccountRequestPageComponent } from './disable-account-request-page/disable-account-request-page.component';
+import { MakeBoatAppointmentClientComponent } from './make-boat-appointment-client/make-boat-appointment-client.component';
 
 
 @NgModule({
@@ -120,6 +121,7 @@ import { DisableAccountRequestPageComponent } from './disable-account-request-pa
     AdminHomePageComponent,
     SeeAllComplainsComponent,
     DisableAccountRequestPageComponent,
+    MakeBoatAppointmentClientComponent,
 
   ],
   imports: [
