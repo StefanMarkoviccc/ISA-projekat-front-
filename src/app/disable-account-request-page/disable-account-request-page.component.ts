@@ -11,6 +11,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class DisableAccountRequestPageComponent implements OnInit {
 
   form : FormGroup
+  userId: any
+  user: any
 
   constructor(private formBuilder: FormBuilder,  private api: ApiService, private activatedRoute: ActivatedRoute,private router: Router) {
 
@@ -18,15 +20,24 @@ export class DisableAccountRequestPageComponent implements OnInit {
       text : [" ", Validators.required]
     })
 
-    
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.userId = params['userId'];
 
-   }
+   });
+  }
+  
+  
 
   ngOnInit(): void {
   }
 
   onSubmit(){
-
-  }
+    this.api.sendRequestToDisableAcc({
+      userId: parseInt(this.userId),
+      text: this.form.get('text')?.value,
+    }).subscribe((response: any) => {
+      this.router.navigate(['/client-home-page'])
+    });
+  } 
 
 }

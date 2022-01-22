@@ -145,6 +145,9 @@ export class ApiService {
   getAllComplains(data: any){
     return this.http.get(this.url + '/api/complains/', this.generateHeader())
   }
+  sendRequestToDisableAcc(data: any){
+    return this.http.get(this.url + 'api/accRequests', this.generateHeader())
+  }
 
   generateHeader() : any {
 
